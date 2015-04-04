@@ -1,6 +1,6 @@
 <?php 
 //conection: 
-$link = mysqli_connect("engineers-withoutborders.rhcloud.com","adminCjp7HQy","nuL1MDKTyQkl","patientdb") or die("Error " . mysqli_error($link)); 
+$link = mysqli_connect("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/","adminCjp7HQy","nuL1MDKTyQkl","patientdb") or die("Error " . mysqli_error($link)); 
 
 //consultation: 
 
