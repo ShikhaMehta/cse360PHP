@@ -29,7 +29,7 @@ if ($result) {
 		$DoctorOrPatient = $row["DoctorOrPatient"];
         echo "$username<br>\n";
 		echo "$password<br>\n";
-		echo $DoctorOrPatient<br>\n";
+		echo "$DoctorOrPatient<br>\n";
     }
 }
 echo "</body></html>\n"; 
