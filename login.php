@@ -17,7 +17,7 @@ $password = $_POST["password"];
 
 // define SQL query 
 
-$query = "SELECT * FROM `authentication` WHERE username = '$username';"; 
+$query = "SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';"; 
 
 //execute the query. 
 
