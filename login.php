@@ -36,7 +36,7 @@ if ($result) {
 }
 else
 {
-	echo "Invalid password<br>";
+	echo "<h2>Invalid password</h2>";
 }
 echo "</body>"; 
 ?> 
