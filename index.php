@@ -2,24 +2,32 @@
 //conection: 
 $OPENSHIFT_MYSQL_DB_HOST = getenv('OPENSHIFT_MYSQL_DB_HOST');
 $OPENSHIFT_MYSQL_DB_PORT = getenv('OPENSHIFT_MYSQL_DB_PORT');
+$dbname = "patientdb";
 
 // debug
 echo $OPENSHIFT_MYSQL_DB_HOST . "\n";
 echo $OPENSHIFT_MYSQL_DB_PORT . "\n";
 
-$link = mysql_connect("$OPENSHIFT_MYSQL_DB_HOST","adminCjp7HQy","nuL1MDKTyQkl","patientdb") or die("Error " . mysqli_error($link)); 
+$link = mysql_connect("$OPENSHIFT_MYSQL_DB_HOST","adminCjp7HQy","nuL1MDKTyQkl") or die("Error: Cannot connect to database.\n"); 
+mysql_select_db($dbname);
 
 //consultation: 
 
-$query = "SELECT name FROM authentication" or die("Error in the consult.." . mysqli_error($link)); 
+$query = "SELECT * FROM authentication"; 
 
 //execute the query. 
 
-$result = $link->query($query); 
+$result = mysql_query($query); 
 
 //display information: 
 
-while($row = mysql_fetch_array($result)) { 
-  echo $row["name"] . "<br>"; 
+if ($result) {
+    while($row = mysql_fetch_array($result)) {
+        $username = $row["username"];
+		$password = $row["password"];
+		$DoctorOrPatient = $row["DoctorOrPatient"];
+        echo "<h2>some data</h2>";
+        echo "$username<br>";
+    }
 } 
 ?> 
