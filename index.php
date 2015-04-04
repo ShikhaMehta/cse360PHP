@@ -21,14 +21,15 @@ $query = "SELECT * FROM authentication";
 $result = mysql_query($query); 
 
 //display information: 
-
+echo "<body>";
 if ($result) {
     while($row = mysql_fetch_array($result)) {
         $username = $row["username"];
 		$password = $row["password"];
 		$DoctorOrPatient = $row["DoctorOrPatient"];
-        echo "<h2>some data</h2>";
+        //echo "<h2>some data</h2>";
         echo "$username $password $DoctorOrPatient<br>";
     }
-} 
+}
+echo "</body>"; 
 ?> 
