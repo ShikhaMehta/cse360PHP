@@ -46,16 +46,16 @@ if ($result) {
 			echo "<br><br><br><br>";
 			echo "<form action=\"patient.php\" method=\"post\">";
 			echo " <h2>Are you experiencing any pain?</h2>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_1\">Pain level 1 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_2\">Pain level 2 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_3\">Pain level 3 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_4\">Pain level 4 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_5\">Pain level 5 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_6\">Pain level 6 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_7\">Pain level 7 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_8\">Pain level 8 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_9\">Pain level 9 <br>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_10\">Pain level 10 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_10\"> 10 ";
 
 			echo "<input type=\"submit\"></CENTER>";
 			echo "</form>";
