@@ -36,7 +36,7 @@ if ($result) {
 }
 else
 {
-	location.href = "http://engineers-withoutborders.rhcloud.com/login_error.html";
+	window.open("http://engineers-withoutborders.rhcloud.com/login_error.html","_self");
 }
 echo "</body>"; 
 ?> 
