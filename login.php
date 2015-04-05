@@ -36,9 +36,5 @@ if ($result) {
 		exit;
     }
 }
-else {
-	 echo "invalid login";
-	 exit;
-}
-echo "should not get here";
+header("Location: http://engineers-withoutborders.rhcloud.com/login_error.html");
 ?> 
