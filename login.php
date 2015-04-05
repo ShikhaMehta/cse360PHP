@@ -25,14 +25,31 @@ $result = mysql_query($query);
 
 //display information: 
 if ($result) {
-	echo "<body>";
     while($row = mysql_fetch_array($result)) {
         $username = $row["username"];
 		$password = $row["password"];
 		$DoctorOrPatient = $row["DoctorOrPatient"];
-        echo "<h2>Welcome Back $username</h2>";
-        echo "$username $password $DoctorOrPatient<br>";
-		echo "</body>"; 
+		// add logic here to customize the html displayed here depending on if the person is a doctor or a patient
+		if($DoctorOrPatient == "Doctor")
+		{
+			echo "<h2>Welcome Back $username</h2>";
+			echo "This page is under construction <br>";
+			exit;
+		}
+		else if ($DoctorOrPatient == "Patient")
+		{
+			echo "<h2>Welcome Back $username</h2>";
+			echo " Shikha is going to work on this page shortly <br>";
+			exit;
+		}
+		else
+		{
+			echo "$username $password $DoctorOrPatient<br>";
+			echo "there seems to be an error <br>. Please check entry in the database";
+			exit;
+		}
+        //echo "<h2>Welcome Back $username</h2>";
+       // echo "$username $password $DoctorOrPatient<br>";
 		exit;
     }
 }
