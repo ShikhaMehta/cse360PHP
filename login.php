@@ -36,7 +36,7 @@ if ($result) {
 }
 else
 {
-	 header("Location: http://engineers-withoutborders.rhcloud.com/login_error.html");
+	 header("<h2>invalid login</h2>");
 	 exit;
 }
 echo "</body>"; 
