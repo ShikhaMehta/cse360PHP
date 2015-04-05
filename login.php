@@ -36,9 +36,8 @@ if ($result) {
 		exit;
     }
 }
-else
-{
-	 header("<h2>invalid login</h2>");
+else {
+	 echo "<h2>invalid login</h2>";
 	 echo "</body>"; 
 	 exit;
 }
