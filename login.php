@@ -24,8 +24,8 @@ $query = "SELECT * FROM `authentication` WHERE username = '$username' and passwo
 $result = mysql_query($query); 
 
 //display information: 
-echo "<body>";
 if ($result) {
+	echo "<body>";
     while($row = mysql_fetch_array($result)) {
         $username = $row["username"];
 		$password = $row["password"];
@@ -37,8 +37,8 @@ if ($result) {
     }
 }
 else {
-	 echo "<h2>invalid login</h2>";
-	 echo "</body>"; 
+	 echo "invalid login";
 	 exit;
 }
+echo "should not get here";
 ?> 
