@@ -36,7 +36,7 @@ if ($result) {
 }
 else
 {
-	echo "<h2>Invalid password</h2>";
+	location.href = "http://engineers-withoutborders.rhcloud.com/login_error.html";
 }
 echo "</body>"; 
 ?> 
