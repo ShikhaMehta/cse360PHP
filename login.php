@@ -38,8 +38,33 @@ if ($result) {
 		}
 		else if ($DoctorOrPatient == "Patient")
 		{
-			echo "<h2>Welcome Back $username</h2>";
-			echo " Shikha is going to work on this page shortly <br>";
+			echo "<html>";
+			echo "<title>Patient Symptoms Page</title>";
+			echo "<body>";
+
+			echo "<CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br>"; 
+			echo "<br><br><br><br>";
+			echo "<form action=\"patient.php\" method=\"post\">";
+			echo " <h2>Are you experiencing any pain?</h2>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_1\">Pain level 1 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_2\">Pain level 2 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_3\">Pain level 3 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_4\">Pain level 4 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_5\">Pain level 5 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_6\">Pain level 6 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_7\">Pain level 7 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_8\">Pain level 8 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_9\">Pain level 9 <br>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_10\">Pain level 10 <br>";
+
+			echo "<input type=\"submit\"></CENTER>";
+			echo "</form>";
+			echo "</body>";
+			echo "</html>";
+
+
+			//echo "<h2>Welcome Back $username</h2>";
+			//echo " Shikha is going to work on this page shortly <br>";
 			exit;
 		}
 		else
