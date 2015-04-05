@@ -30,14 +30,16 @@ if ($result) {
         $username = $row["username"];
 		$password = $row["password"];
 		$DoctorOrPatient = $row["DoctorOrPatient"];
-        //echo "<h2>some data</h2>";
+        echo "<h2>Welcome Back $username</h2>";
         echo "$username $password $DoctorOrPatient<br>";
+		echo "</body>"; 
+		exit;
     }
 }
 else
 {
 	 header("<h2>invalid login</h2>");
+	 echo "</body>"; 
 	 exit;
 }
-echo "</body>"; 
 ?> 
