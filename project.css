@@ -1,0 +1,13 @@
+/* CSS for HTML used by index.php and other
+ PHP files' HTML output
+*/
+
+body {
+	background-color: lightblue;
+	font-family: Verdana, Arial, "Times New Roman";
+	font-size: 12pt;
+}
+
+table {
+	border: none;
+}
