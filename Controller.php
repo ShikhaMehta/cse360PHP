@@ -128,7 +128,7 @@ Class Controller {
 	public function queryDatabase() {
 		// if the query string is not populated, issue warning
 		//  and do not query the database
-		if (empty($this->databaseQeuryString)) {
+		if (empty($this->databaseQueryString)) {
 			echo "!! No SQL query string defined. Please use setQueryString(<your_SQL_query_string>) prior to calling queryDatabase(). !!";
 		} else {
 			// open a connection to the database, failing if there is an error
@@ -138,7 +138,7 @@ Class Controller {
 			mysqli_select_db($mysqlConnection, DB_NAME) or die("Error: " . mysqli_error($mysqlConnection));
 			
 			// put the results into the $queryData variable
-			$this->queryData = mysqli_query($mysqlConnection, $newDatabaseQueryString);
+			$this->queryData = mysqli_query($mysqlConnection, $databaseQueryString);
 			
 			// disconnect from the database
 			mysqli_close($mysqlConnection);
