@@ -139,7 +139,7 @@ Class Controller {
 			
 			// put the results into the $queryData variable
 			$this->queryData = mysqli_query($mysqlConnection, $this->databaseQueryString);
-			
+echo '"' . $this->databaseQueryString . '"<br />';			
 			// disconnect from the database
 			mysqli_close($mysqlConnection);
 		}
