@@ -89,6 +89,10 @@ Class Controller {
 		return $this->databaseQueryString;
 	}
 	
+	public function getQueryData() {
+		return $this->queryData;
+	}
+	
 	//-----------------  queryDatabase() ---------------------------
 	// This function uses $databaseQueryString (a formatted SQL
 	//  query string) and queries the MySQL database with it.

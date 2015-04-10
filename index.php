@@ -77,7 +77,7 @@ include 'Controller.php';
 $newCtrl = new Controller;
 
 $newCtrl->setQueryString("SELECT * FROM doctor");
-var_dump($newCtrl->$queryData);		
+var_dump($newCtrl->queryData);		
 		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
