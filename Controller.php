@@ -139,19 +139,7 @@ Class Controller {
 			
 			// put the results into the $queryData variable
 			$this->queryData = mysqli_query($mysqlConnection, $this->databaseQueryString);
-
-if (mysqli_num_rows($this->queryData) > 0) {
-	while ($row = mysqli_fetch_assoc($this->queryData)) {
-	    // do stuff with the data from this row
-	    // the array would hold values for each row in
-        //  this format:	
-	    echo $row['DoctorName'] . $row['Pat1Name'] . '<br />';
-	    // where the first row would correspond to:
-	    // "Albert", "Einstein", 1112223333
-	}
-} else {
-	echo 'No results<br />';
-}
+			
 			// disconnect from the database
 			mysqli_close($mysqlConnection);
 		}

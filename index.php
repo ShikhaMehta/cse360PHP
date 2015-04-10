@@ -76,12 +76,12 @@ include 'Controller.php';
 
 $newCtrl = new Controller;
 
-$newCtrl->setQueryString('SELECT * FROM doctor;');
+$newCtrl->setQueryString('SELECT * FROM doctor');
 
 $newCtrl->queryDatabase();
 
 $returnedData = $newCtrl->getQueryData();
-/*
+
 if (mysqli_num_rows($returnedData) > 0) {
 	while ($row = mysqli_fetch_assoc($returnedData)) {
 	    // do stuff with the data from this row
@@ -94,7 +94,7 @@ if (mysqli_num_rows($returnedData) > 0) {
 } else {
 	echo 'No results<br />';
 }
-*/		
+		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
 			
