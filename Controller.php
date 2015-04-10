@@ -126,8 +126,6 @@ Class Controller {
 	//     }
 	//
 	public function queryDatabase() {
-
-var_dump($this->databaseQueryString);
 		// if the query string is not populated, issue warning
 		//  and do not query the database
 		if (empty($this->databaseQueryString)) {
