@@ -76,7 +76,7 @@ include 'Controller.php';
 
 $newCtrl = new Controller;
 
-$newCtrl->setQueryString("SELECT * FROM doctor");
+$newCtrl->setQueryString("SELECT * FROM doctor WHERE 1");
 
 var_dump($newCtrl->getQueryData());		
 		
