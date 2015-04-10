@@ -126,6 +126,8 @@ Class Controller {
 	//     }
 	//
 	public function queryDatabase() {
+
+var_dump($this->databaseQueryString);
 		// if the query string is not populated, issue warning
 		//  and do not query the database
 		if (empty($this->databaseQueryString)) {
@@ -138,7 +140,7 @@ Class Controller {
 			mysqli_select_db($mysqlConnection, DB_NAME) or die("Error: " . mysqli_error($mysqlConnection));
 			
 			// put the results into the $queryData variable
-			$this->queryData = mysqli_query($mysqlConnection, $databaseQueryString);
+			$this->queryData = mysqli_query($mysqlConnection, $this->databaseQueryString);
 			
 			// disconnect from the database
 			mysqli_close($mysqlConnection);
