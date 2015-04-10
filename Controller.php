@@ -80,6 +80,9 @@ Class Controller {
 		return $this->databaseQueryString;
 	}
 	
+	// ---------------- getQueryData ------------------
+	// Returns the current $queryData which is a
+	//   mysqli_result data structure
 	public function getQueryData() {
 		return $this->queryData;
 	}
@@ -116,7 +119,7 @@ Class Controller {
 	//         // "Albert", "Einstein", 1112223333
 	//     }
 	//
-	public function queryDatabase() {
+	protected function queryDatabase() {
 		// if the query string is not populated, issue warning
 		//  and do not query the database
 		if (empty($this->databaseQueryString)) {
@@ -138,7 +141,7 @@ Class Controller {
 	
 	// This method is redefined in it's child classes to handle
 	//  database query data accordingly
-	public function parseDatabaseReturnInfo() {
+	protected function parseDatabaseReturnInfo() {
 		// uses the $queryData attribute that was
 		// populated by queryDatabase to parse the
 		// results accordingly for use by respective WebInterface class

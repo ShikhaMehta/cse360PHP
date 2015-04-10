@@ -70,19 +70,6 @@ error_reporting(-1);
 		//  and what type of user it is, do the appropriate
 		//  action (show appropriate html page)
 		
-// DATABASE QUERY USING CONTROLLER TEST
-//   WILL REMOVE ONCE TEST RUNS SUCCESSFULLY
-include 'Controller.php';
-
-$newCtrl = new Controller;
-
-$newCtrl->setQueryString('SELECT * FROM doctor');
-
-$newCtrl->queryDatabase();
-
-var_dump($newCtrl->getQueryData());
-
-		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
 			
