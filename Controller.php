@@ -70,7 +70,7 @@ Class Controller {
 	//  the variables to null to eliminate errors
 	//!! REQUIRES extending classes call parent::__construct();
 	//    inside it's own __construct() function
-	private function __construct() {
+	function __construct() {
 		$this->currentUser = NULL;
 		$this->databaseQueryString = "";
 		$this->queryData = NULL;
