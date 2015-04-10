@@ -76,7 +76,7 @@ include 'Controller.php';
 
 $newCtrl = new Controller;
 
-$newCtrl->setQueryString('SELECT * FROM Doctor;');
+$newCtrl->setQueryString('SELECT * FROM authentication;');
 
 $newCtrl->queryDatabase();
 
