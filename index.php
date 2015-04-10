@@ -76,11 +76,24 @@ include 'Controller.php';
 
 $newCtrl = new Controller;
 
-$newCtrl->setQueryString('SELECT * FROM authentication;');
+$newCtrl->setQueryString('SELECT * FROM doctor;');
 
 $newCtrl->queryDatabase();
 
-var_dump($newCtrl->getQueryData());		
+$returnedData = $newCtrl->getQueryData();
+
+if (mysqli_num_rows($returnedData) > 0) {
+	while ($row = mysqli_fetch_assoc($returnedData)) {
+	    // do stuff with the data from this row
+	    // the array would hold values for each row in
+        //  this format:	
+	    echo $row['DoctorName'] . $row['Pat1Name'] . '<br />';
+	    // where the first row would correspond to:
+	    // "Albert", "Einstein", 1112223333
+	}
+} else {
+	echo 'No results<br />';
+}
 		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
