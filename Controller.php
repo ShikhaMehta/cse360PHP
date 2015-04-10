@@ -79,13 +79,13 @@ Class Controller {
 	// ---------------- setQueryString ------------------
 	// This function takes a string and sets the
 	//   $databaseQueryString equal to it.
-	protected function setQueryString($newQueryString) {
+	public function setQueryString($newQueryString) {
 		$this->databaseQueryString = $newQueryString;
 	}
 	
 	// ---------------- getQueryString ------------------
 	// Returns the current value of $databaseQueryString
-	protected function getQueryString() {
+	public function getQueryString() {
 		return $this->databaseQueryString;
 	}
 	
@@ -121,7 +121,7 @@ Class Controller {
 	//         // "Albert", "Einstein", 1112223333
 	//     }
 	//
-	protected function queryDatabase() {
+	public function queryDatabase() {
 		// if the query string is not populated, issue warning
 		//  and do not query the database
 		if (empty($this->databaseQeuryString)) {
@@ -143,7 +143,7 @@ Class Controller {
 	
 	// This method is redefined in it's child classes to handle
 	//  database query data accordingly
-	protected function parseDatabaseReturnInfo() {
+	public function parseDatabaseReturnInfo() {
 		// uses the $queryData attribute that was
 		// populated by queryDatabase to parse the
 		// results accordingly for use by respective WebInterface class
