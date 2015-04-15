@@ -40,6 +40,7 @@ if ($result) {
 		{
 			echo "<html>";
 			echo "<title>Patient Symptoms Page</title>";
+			echo "<link rel=\"stylesheet\" href=\"project.css\" />";
 			echo "<body>";
 
 			echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
