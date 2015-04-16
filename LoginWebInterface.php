@@ -37,12 +37,12 @@ $query = "SELECT * FROM `authentication` WHERE username = '$username' and passwo
 
 //execute the query. 
 
-$result = mysql_query($query); 
-//$result = $test->getQueryData();
+//$result = mysql_query($query); 
+$result = $test->getQueryData();
 
 //display information: 
 if ($result) {
-    while($row = mysql_fetch_array($result)) {
+    while($row = mysqli_fetch_array($result)) {
         $username = $row["username"];
 		$password = $row["password"];
 		$DoctorOrPatient = $row["DoctorOrPatient"];
