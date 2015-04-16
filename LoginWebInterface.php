@@ -7,18 +7,22 @@ error_reporting(-1);
 require 'Controller.php';
 class LoginWebInterface extends Controller
 {
+	public function publicsetQueryString($newQueryString) {
+		parent::setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
+	}
 	protected function parseDatabaseReturnInfo() 
 	{
 		;
 	}
-	
-	public function testfun()
-	{
-		echo "hello world";
-	}
+
 	public function publicqueryDatabase() 
 	{
-			queryDatabase();
+		parent::queryDatabase();
+	}
+	
+	public function publicgetQueryData()
+	{
+		parent::getQueryData();
 	}
 }
 
@@ -26,7 +30,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $test = new LoginWebInterface();
 
-$test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
+$test->publicsetQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
 $test->publicqueryDatabase();
 
 
@@ -53,7 +57,7 @@ mysql_select_db($dbname);
 //execute the query. 
 
 //$result = mysql_query($query); 
-$result = $test->getQueryData();
+$result = $test->publicgetQueryData();
 
 //display information: 
 //if ($result) {
