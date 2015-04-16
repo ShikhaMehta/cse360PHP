@@ -1,4 +1,10 @@
 <?php 
+class LoginWebInterface extends Controller
+{
+	
+}
+$test = new LoginWebInterface();
+test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
 // these variables need to be used since openshift probably has a firewall that doesn't allow
 // external access to their mysql database, access is only through phpmyadmin or ssh to the actual server
 $OPENSHIFT_MYSQL_DB_HOST = getenv('OPENSHIFT_MYSQL_DB_HOST');
@@ -21,7 +27,8 @@ $query = "SELECT * FROM `authentication` WHERE username = '$username' and passwo
 
 //execute the query. 
 
-$result = mysql_query($query); 
+//$result = mysql_query($query); 
+$result = test->getQueryData();
 
 //display information: 
 if ($result) {
