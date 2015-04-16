@@ -16,15 +16,19 @@ class LoginWebInterface extends Controller
 	{
 		echo "hello world";
 	}
+	protected function queryDatabase() 
+	{
+		;
+	}
 }
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 $test = new LoginWebInterface();
-echo "about to die?\n";
+
 $test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
 $test->queryDatabase();
-echo "still alive?\n";
+
 
 // these variables need to be used since openshift probably has a firewall that doesn't allow
 // external access to their mysql database, access is only through phpmyadmin or ssh to the actual server
