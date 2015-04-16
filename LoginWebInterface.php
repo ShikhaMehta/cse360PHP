@@ -1,7 +1,10 @@
 <?php 
+require './Controller.php';
 class LoginWebInterface extends Controller
 {
-	
+	protected function parseDatabaseReturnInfo() {
+		;
+	}
 }
 $test = new LoginWebInterface();
 $test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
