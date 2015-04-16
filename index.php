@@ -71,6 +71,7 @@ error_reporting(-1);
 		//  action (show appropriate html page)
 		
 		$_SESSION['user_type'] = 'DOCTOR';
+		$_SESSION['current_user'] = 'Doctor1';
 		// default to the doctor page for implementation testing purposes. 
 		
 

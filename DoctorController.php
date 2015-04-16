@@ -25,10 +25,15 @@
 
 Class DoctorController extends Controller
 {
-
 	function __construct() 
 	{
 		parent::__construct();
+	}
+	
+	//Written by Adam Nunez
+	function listOfDetails()
+	{
+		
 	}
 }
 
