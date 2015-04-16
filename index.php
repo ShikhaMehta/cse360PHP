@@ -73,7 +73,7 @@ error_reporting(-1);
 		$_SESSION['user_type'] = 'DOCTOR';
 		// default to the doctor page for implementation testing purposes. 
 		
-		
+
 		
 		
 		if (empty($_SESSION['user_type'])) {

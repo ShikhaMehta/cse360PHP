@@ -19,8 +19,17 @@
 //    $_SESSION  // holds session information for use by other scripts
 //
 //
+//
+//
 ------------------------------------------------*/
 
+Class DoctorController extends Controller
+{
 
+	function __construct() 
+	{
+		parent::__construct();
+	}
+}
 
 ?>
