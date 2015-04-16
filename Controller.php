@@ -34,9 +34,9 @@
 //   __construct()  // used to set default variables
 //                  //  REQUIRES extending classes call parent::__construct();
 //                  //  inside it's own __construct() method
-//   parseWebData() // deprecated as PHP handles this directly with $_POST
+//   !parseWebData() // deprecated as PHP handles this directly with $_POST
 //   queryDatabase(String) // returns results of query to $queryData
-//   parseDatabaseReturnInfo() // defined in extending classes accordingly
+//   !parseDatabaseReturnInfo() // deprecated as respective webInterface scripts handle parsing via getQueryData()
 //
 ------------------------------------------------*/
 
@@ -83,7 +83,7 @@ Class Controller {
 	// ---------------- getQueryData ------------------
 	// Returns the current $queryData which is a
 	//   mysqli_result data structure
-	protected function getQueryData() {
+	public function getQueryData() {
 		return $this->queryData;
 	}
 	
@@ -139,15 +139,6 @@ Class Controller {
 	
 		}
 	}
-	
-	// This method is redefined in it's child classes to handle
-	//  database query data accordingly
-	protected function parseDatabaseReturnInfo() {
-		// uses the $queryData attribute that was
-		// populated by queryDatabase to parse the
-		// results accordingly for use by respective WebInterface class
-	}
-	
 }
 
 ?>
