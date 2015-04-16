@@ -2,12 +2,19 @@
 require './Controller.php';
 class LoginWebInterface extends Controller
 {
-	protected function parseDatabaseReturnInfo() {
+	protected function parseDatabaseReturnInfo() 
+	{
 		;
+	}
+	
+	public function testfun()
+	{
+		echo "hello world";
 	}
 }
 $test = new LoginWebInterface();
 $test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
+
 // these variables need to be used since openshift probably has a firewall that doesn't allow
 // external access to their mysql database, access is only through phpmyadmin or ssh to the actual server
 $OPENSHIFT_MYSQL_DB_HOST = getenv('OPENSHIFT_MYSQL_DB_HOST');
@@ -30,8 +37,8 @@ $query = "SELECT * FROM `authentication` WHERE username = '$username' and passwo
 
 //execute the query. 
 
-//$result = mysql_query($query); 
-$result = $test->getQueryData();
+$result = mysql_query($query); 
+//$result = $test->getQueryData();
 
 //display information: 
 if ($result) {
@@ -44,6 +51,7 @@ if ($result) {
 		{
 			echo "<h2>Welcome Back $username</h2>";
 			echo "This page is under construction <br>";
+			$test->testfun();
 			exit;
 		}
 		else if ($DoctorOrPatient == "Patient")
