@@ -30,6 +30,15 @@ Class DoctorController extends Controller
 	{
 		parent::__construct();
 	}
+	
+	// created by Oluwatosin Ajayi. 
+	// 
+	public function querydoctordatabases() 
+	{
+		$this->queryDatabase(); 
+		
+
+	}
 }
 
 ?>
