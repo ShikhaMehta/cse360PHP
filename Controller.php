@@ -122,20 +122,26 @@ Class Controller {
 	protected function queryDatabase() {
 		// if the query string is not populated, issue warning
 		//  and do not query the database
+		echo "shikha debug 1\n";
 		if (empty($this->databaseQueryString)) {
 			echo "!! No SQL query string defined. Please use setQueryString(<your_SQL_query_string>) prior to calling queryDatabase(). !!";
 		} else {
 			// open a connection to the database, failing if there is an error
+			echo "shikha debug 2\n";
 			$mysqlConnection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, "", DB_PORT) or die("Error: " . mysqli_error($mysqlConnection));
 			
 			// select the current database we want, failing if there is an error
+			echo "shikha debug 3\n";
 			mysqli_select_db($mysqlConnection, DB_NAME) or die("Error: " . mysqli_error($mysqlConnection));
 			
 			// put the results into the $queryData variable
+			echo "shikha debug 4\n";
 			$this->queryData = mysqli_query($mysqlConnection, $this->databaseQueryString);
 
 			// disconnect from the database
+			echo "shikha debug 5\n";
 			mysqli_close($mysqlConnection);
+			echo "shikha debug 6\n";
 		}
 	}
 	
