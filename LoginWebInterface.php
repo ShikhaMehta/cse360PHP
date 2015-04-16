@@ -8,7 +8,7 @@ require 'Controller.php';
 class LoginWebInterface extends Controller
 {
 	public function publicsetQueryString($newQueryString) {
-		parent::setQueryString($newQueryString);
+		return parent::setQueryString($newQueryString);
 	}
 	//protected function parseDatabaseReturnInfo() 
 	//{
@@ -17,12 +17,12 @@ class LoginWebInterface extends Controller
 
 	public function publicqueryDatabase() 
 	{
-		parent::queryDatabase();
+		return parent::queryDatabase();
 	}
 	
 	public function publicgetQueryData()
 	{
-		parent::getQueryData();
+		return parent::getQueryData();
 	}
 }
 
