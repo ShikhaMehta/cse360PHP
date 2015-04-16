@@ -70,20 +70,20 @@ Class Controller {
 	// ---------------- setQueryString ------------------
 	// This function takes a string and sets the
 	//   $databaseQueryString equal to it.
-	public function setQueryString($newQueryString) {
+	protected function setQueryString($newQueryString) {
 		$this->databaseQueryString = $newQueryString;
 	}
 	
 	// ---------------- getQueryString ------------------
 	// Returns the current value of $databaseQueryString
-	public function getQueryString() {
+	protected function getQueryString() {
 		return $this->databaseQueryString;
 	}
 	
 	// ---------------- getQueryData ------------------
 	// Returns the current $queryData which is a
 	//   mysqli_result data structure
-	public function getQueryData() {
+	protected function getQueryData() {
 		return $this->queryData;
 	}
 	
