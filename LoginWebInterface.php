@@ -1,5 +1,5 @@
 <?php 
-require './Controller.php';
+require 'Controller.php';
 class LoginWebInterface extends Controller
 {
 	protected function parseDatabaseReturnInfo() 
@@ -36,7 +36,7 @@ $password = $_POST["password"];
 
 // define SQL query 
 
-$query = "SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';"; 
+//$query = "SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';"; 
 
 //execute the query. 
 
