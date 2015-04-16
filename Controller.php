@@ -26,7 +26,7 @@
 //    NONE
 //
 //  Attributes:
-//    $currentUser          // used by extending classes for Patient or Doctor
+//    !$currentUser          // deprecated as it will be held in the $_SESSION array
 //    $databaseQueryString  // SQL query string for querying database
 //    $queryData            // holds database query results
 //
@@ -52,7 +52,6 @@ define('DB_NAME', 'patientdb');
 Class Controller {
 
 	// inherited variables
-	protected $currentUser;
 	protected $databaseQueryString;
 	protected $queryData;
 	
@@ -62,7 +61,6 @@ Class Controller {
 	//!! REQUIRES extending classes call parent::__construct();
 	//    inside it's own __construct() function
 	function __construct() {
-		$this->currentUser = NULL;
 		$this->databaseQueryString = "";
 		$this->queryData = NULL;
 	}
