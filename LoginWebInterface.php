@@ -8,12 +8,12 @@ require 'Controller.php';
 class LoginWebInterface extends Controller
 {
 	public function publicsetQueryString($newQueryString) {
-		parent::setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
+		parent::setQueryString($newQueryString);
 	}
-	protected function parseDatabaseReturnInfo() 
-	{
-		;
-	}
+	//protected function parseDatabaseReturnInfo() 
+	//{
+	//	;
+	//}
 
 	public function publicqueryDatabase() 
 	{
