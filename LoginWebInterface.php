@@ -17,6 +17,9 @@ class LoginWebInterface extends Controller
 		echo "hello world";
 	}
 }
+
+$username = $_POST["username"];
+$password = $_POST["password"];
 $test = new LoginWebInterface();
 echo "about to die?\n";
 $test->setQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
@@ -36,8 +39,8 @@ $dbname = "patientdb";
 $link = mysql_connect("$OPENSHIFT_MYSQL_DB_HOST","adminCjp7HQy","nuL1MDKTyQkl") or die("Error: Cannot connect to database.\n"); 
 mysql_select_db($dbname);
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+//$username = $_POST["username"];
+//$password = $_POST["password"];
 
 // define SQL query 
 
