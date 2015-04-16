@@ -119,7 +119,7 @@ Class Controller {
 	//         // "Albert", "Einstein", 1112223333
 	//     }
 	//
-	protected function queryDatabase() {
+	public function queryDatabase() {
 		// if the query string is not populated, issue warning
 		//  and do not query the database
 		echo "shikha debug 1\n";
