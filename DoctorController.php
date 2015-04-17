@@ -49,10 +49,7 @@ Class DoctorController extends Controller
 	//temp function to populate patient's symptoms for testing. 
 	Public function addpatientsymptoms()
 	{
-		$this->setQueryString("UPDATE patient SET PatientName = 'Patient2', Symptom1=3, Symptom2=5, Symptom3=1, Symptom4=3, Symptom5 = 3, TimeStamp = '2015-04-12 13:29:33';");
-		$this->queryDatabase();
-		
-		$this->setQueryString("UPDATE patient SET PatientName = 'Patient3', Symptom1=7, Symptom2=2, Symptom3=1, Symptom4=3, Symptom5 = 4, TimeStamp = '2015-04-11 10:15:43';");
+		$this->setQueryString("UPDATE patient SET PatientName = 'Patient2', Symptom1=2, Symptom2=4, Symptom3=1, Symptom4=2, Symptom5 = 2, TimeStamp = '2015-04-13 17:43:12';");
 		$this->queryDatabase();
 	}
 	
