@@ -21,9 +21,7 @@
 //
 ------------------------------------------------*/
 require 'DoctorController.php';
-$DoctorControllerobject = new DoctorController;
 
-$DoctorControllerobject->addpatientsymptoms();
 // checking patient list. 
 if(empty($_POST['patient_name']))
 {

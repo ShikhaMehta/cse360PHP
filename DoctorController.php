@@ -45,15 +45,7 @@ Class DoctorController extends Controller
 		$this->queryDatabase(); 
 		
 	}
-	
-	//temp function to populate patient's symptoms for testing. 
-	Public function addpatientsymptoms()
-	{
-		$this->setQueryString("UPDATE patient SET PatientName = 'Patient2', Symptom1=2, Symptom2=4, Symptom3=1, Symptom4=2, Symptom5 = 2, TimeStamp = '2015-04-13 17:43:12';");
-		$this->queryDatabase();
-	}
-	
-	//Written by Adam Nunez
+		//Written by Adam Nunez
 	public function listOfDetails($PatientName)
 	{
 		//Setting the query string to all symptoms for the input patientName
