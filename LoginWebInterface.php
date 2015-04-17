@@ -1,4 +1,9 @@
 <?php 
+
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+
 //LoginWebInterface - basically spits out the HTM
 echo "<html>";
 echo "<title>Engineers without borders</title>";
