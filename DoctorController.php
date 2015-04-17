@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------------------
-// Adam Nunez and Oluwatosin Ajayi
+// by : Adam Nunez and Oluwatosin Ajayi
 //
 //  Extends:
 //  Controller. 
@@ -30,27 +30,41 @@ Class DoctorController extends Controller
 		parent::__construct();
 	}
 	
-	// created by Oluwatosin Ajayi. 
-	// 
+	// Written by Oluwatosin Ajayi. 
+	// used for storing the patient's symptom numbers for results of the mean.  
+	public $patients;
 	public function querydoctordatabases($DoctorName) 
-	{
-		  $longquerystring; 
-		//$longquerystring = ' SELECT doctor.Pat1Name 
-		//$longquerystring = 'SELECT doctor.Pat1Name,doctor.Pat2Name,doctor.Pat3Name,doctor.Pat4Name,doctor.Pat5Name';
-		//$longquerystring .= ' patient.Symptom1,patient.Symptom2,patient.Symptom3,patient.Symptom4,patient.Symptom5';
-		//$longquerystring .= ' FROM doctor LEFT JOIN patient ON doctor.Pat1Name = patient.PatientName AND';
-		//$longquerystring .= ' doctor.Pat2Name = patient.PatientName AND doctor.Pat3Name = patient.PatientName AND';
-		//$longquerystring .= ' doctor.Pat4Name = patient.PatientName AND doctor.Pat5Name = patient.PatientName';
-		//$longquerystring .= " WHERE doctor.DoctorName = '$DoctorName'";
-		
-		$longquerystring  = "SELECT * FROM doctor WHERE doctor.DoctorName = '$DoctorName'";
-		$this->setQueryString($longquerystring);
+	{	
+		// Getting the list of the doctor's patients. 	
+		$this->setQueryString("SELECT * FROM doctor WHERE DoctorName = '$DoctorName'");
 		$this->queryDatabase(); 
-		
+		// When the query data is greater than zero. When there are results. 
+		if (mysqli_num_rows($this->queryData) > 0) 
+		{
+			// creates an associative array that saves the results.  
+			$doctorresults = mysqli_fetch_assoc ($this->queryData);
+			
+			
+			for ($i = 1; $i <= 5; $i++)
+			{
+				
+				$currentpatient = 'Pat' . $i . 'Name'; 
+				$this->setQueryString('SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName =' . $doctorresults["$currentpatient"]);
+				$this->queryDatabase(); // query for each patient's symptoms. 
+				// calculating mean for each patient.
+				$symptomresults  = mysqli_fetch_assoc ($this->queryData);
+				$currentpatientindex = 'patient' . $i; 
+				$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
+				$patients[$currentpatientindex . 'mean'] = calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
+			}
+		}
 	}
-	public function calculatemean()
+	// calculates the mean number from all of the patient symptom numbers. 
+	public function calculatemean($newintegervalue1, $newintegervalue2, $newintegervalue3, $newintegervalue4, $newintegervalue5)
 	{
-		
+		$meaninteger = $newintegervalue1 + $newintegervalue2 + $newintegervalue3 + $newintegervalue4 + $newintegervalue5;
+		$returninteger = $meaninteger/5; 
+		return $returninteger; 
 	}
 	
 	//Written by Adam Nunez
