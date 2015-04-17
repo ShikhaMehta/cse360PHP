@@ -33,10 +33,10 @@ if(empty($_POST['patient_name']))
 	$patientsarray = $Doccontrollerobject->patients; 
 	
 	echo '<table>';
-	for($i = 1; i<= 5; i++)
+	for($i = 1; $i<= 5; $i++)
 	{	
 		echo '<tr>';
-	    echo '<td>' . $patientsarray['patient' . i . 'name'] . '</td> <td>' . $patientsarray['patient' . i . 'mean'] . ' </td>';
+	    echo '<td>' . $patientsarray['patient' . $i . 'name'] . '</td> <td>' . $patientsarray['patient' . $i . 'mean'] . ' </td>';
 		echo '</tr>';	 
 	}
 	
