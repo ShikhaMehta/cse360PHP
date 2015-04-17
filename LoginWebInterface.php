@@ -7,7 +7,7 @@ error_reporting(-1);
 require 'Controller.php';
 class LoginWebInterface extends Controller
 {
-	public function publicsetQueryString($newQueryString) {
+	protected function publicsetQueryString($newQueryString) {
 		return parent::setQueryString($newQueryString);
 	}
 	//protected function parseDatabaseReturnInfo() 
@@ -15,12 +15,12 @@ class LoginWebInterface extends Controller
 	//	;
 	//}
 
-	public function publicqueryDatabase() 
+	protected function publicqueryDatabase() 
 	{
 		return parent::queryDatabase();
 	}
 	
-	public function publicgetQueryData()
+	protected function publicgetQueryData()
 	{
 		return parent::getQueryData();
 	}
@@ -72,7 +72,7 @@ if (mysqli_num_rows($result) > 0)
 		{
 			echo "<h2>Welcome Back $username</h2>";
 			echo "This page is under construction <br>";
-			$test->testfun();
+			//$test->testfun();
 			exit;
 		}
 		else if ($DoctorOrPatient == "Patient")
