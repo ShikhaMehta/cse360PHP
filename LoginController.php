@@ -87,6 +87,6 @@ $test->publicsetQueryString("SELECT * FROM `authentication` WHERE username = '$u
 echo "debug2";
 //$test->publicqueryDatabase();
 echo "debug3";
-//$test->parseDatabaseReturnInfo();
+$test->parseDatabaseReturnInfo();
 
 ?> 
