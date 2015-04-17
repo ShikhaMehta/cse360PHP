@@ -3,17 +3,17 @@
 // Adam Nunez and Oluwatosin Ajayi
 //
 //  Extends:
-//  None.
+//  Controller. 
 //
 //  Extended by:
 //  None.
 //
 //
-//  Extended by:
-//    NONE
+//  Requires:
+//  NONE
 //
 //  Required by:
-//    NONE
+//  NONE
 //
 //  Attributes:
 //    $_SESSION  // holds session information for use by other scripts
@@ -22,7 +22,7 @@
 //
 //
 ------------------------------------------------*/
-
+$_SESSION
 Class DoctorController extends Controller
 {
 	function __construct() 
@@ -38,7 +38,7 @@ Class DoctorController extends Controller
 		
 	}
 	//Written by Adam Nunez
-	function listOfDetails()
+	public function listOfDetails()
 	{
 		
 	}

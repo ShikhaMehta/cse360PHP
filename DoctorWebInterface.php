@@ -20,21 +20,22 @@
 //
 //
 ------------------------------------------------*/
+require 'DoctorController.php';
 
+// checking patient list. 
+if(empty($_POST['patient_name']))
+{
+	
+}
+// checking patient details. 
+else if (!empty($_POST ['patient_name']))
+{
+	
+}
+// redirect to index. 
+else
+{
+	
+}
 ?>
 
-<html>
-<head>
-	<title>
-		EWoB : Connecting People to the Care They Deserve
-	</title>
-	<link rel="stylesheet" href="project.css" />
-</head>
-<body>
-	<?php
-	
-	
-	
-	?>
-</body>
-</html>
