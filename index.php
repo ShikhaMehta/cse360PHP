@@ -69,14 +69,7 @@ error_reporting(-1);
 		// based on whether or not the user has logged in
 		//  and what type of user it is, do the appropriate
 		//  action (show appropriate html page)
-		
-		$_SESSION['user_type'] = 'DOCTOR';
-		$_SESSION['current_user'] = 'Doctor1';
-		// default to the doctor page for implementation testing purposes. 
-		
 
-		
-		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
 			

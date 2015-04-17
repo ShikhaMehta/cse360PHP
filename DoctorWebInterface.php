@@ -22,7 +22,7 @@
 ------------------------------------------------*/
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
-$_POST['patient_name'] = 'Patient3';
+
 
 // checking patient list. 
 if(empty($_POST['patient_name']))
