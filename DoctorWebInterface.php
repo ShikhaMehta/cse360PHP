@@ -33,6 +33,7 @@ if(empty($_POST['patient_name']))
 // checking patient details. 
 else if (!empty($_POST['patient_name']))
 {
+	echo $_POST['patient_name'];
 	$Doccontrollerobject->listOfDetails($_POST['patient_name']);
 	var_dump($Doccontrollerobject->getQueryData());
 }
