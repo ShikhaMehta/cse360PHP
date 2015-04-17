@@ -30,7 +30,7 @@ if(empty($_POST['patient_name']))
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	
 	
-	private $patientsarray = $Doccontrollerobject->patients; 
+	$patientsarray = $Doccontrollerobject->patients; 
 	
 	echo '<table>';
 	for($i = 1; i<= 5; i++)
