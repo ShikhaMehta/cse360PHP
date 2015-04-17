@@ -22,9 +22,124 @@ class LoginWebInterface extends Controller
 	protected function parseDatabaseReturnInfo() 
 	{
 		$result = publicgetQueryData();
-		if (mysqli_num_rows($result) > 0)
+		
+		while($row = mysql_fetch_array($result)) {
+        $username = $row["username"];
+		$password = $row["password"];
+		$DoctorOrPatient = $row["DoctorOrPatient"];
+		// add logic here to customize the html displayed here depending on if the person is a doctor or a patient
+		if($DoctorOrPatient == "Doctor")
 		{
-			while($row = mysqli_fetch_assoc($result)) 
+			echo "<h2>Welcome Back $username</h2>";
+			echo "This page is under construction <br>";
+			exit;
+		}
+		else if ($DoctorOrPatient == "Patient")
+		{
+			echo "<html>";
+			echo "<title>Patient Symptoms Page</title>";
+			echo "<body>";
+
+			echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
+			echo "<br><br>";
+			echo "<form action=\"patient.php\" method=\"post\">";
+			echo " <h2>Are you experiencing any pain?</h2>";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"pain\" value=\"pain_10\"> 10 ";
+			
+			echo "<br><br>";
+			echo " <h2>Are you drowsy?</h2>";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_10\"> 10 ";
+			
+			echo "<br><br>";
+			echo " <h2>Do you have feelings of Nausea?</h2>";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_10\"> 10 ";
+			
+			echo "<br><br>";
+			echo " <h2>Do you feel anxious?</h2>";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_10\"> 10 ";
+			
+			echo "<br><br>";
+			echo " <h2>Do you feel depressed?</h2>";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_1\"> 1 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_2\"> 2 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_3\"> 3 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_4\"> 4 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_5\"> 5 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_6\"> 6 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_7\"> 7 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_8\"> 8 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_9\"> 9 ";
+			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_10\"> 10 ";
+			
+			echo "<br><br>";
+			echo "<input type=\"submit\"></CENTER>";
+			echo "</form>";
+			echo "</body>";
+			echo "</html>";
+
+
+			//echo "<h2>Welcome Back $username</h2>";
+			//echo " Shikha is going to work on this page shortly <br>";
+			exit;
+		}
+		else
+		{
+			echo "$username $password $DoctorOrPatient<br>";
+			echo "there seems to be an error <br>. Please check entry in the database";
+			exit;
+		}
+        //echo "<h2>Welcome Back $username</h2>";
+       // echo "$username $password $DoctorOrPatient<br>";
+		exit;
+    }
+}
+header("Location: http://engineers-withoutborders.rhcloud.com/login_error.html");
+		
+		
+		
+		
+		
+		
+		
+		/*if (mysqli_num_rows($result) > 0)
+		{
+			/*while($row = mysqli_fetch_assoc($result)) 
 			{
 				$username = $row["username"];
 				$password = $row["password"];
@@ -56,7 +171,7 @@ class LoginWebInterface extends Controller
 				}//else if
 
 			}//while
-		}//if
+		}//if*/
 
 	}//protected function parseDatabaseReturnInfo()
 
