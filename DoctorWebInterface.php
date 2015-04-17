@@ -21,11 +21,13 @@
 //
 ------------------------------------------------*/
 require 'DoctorController.php';
+$Doccontrollerobject = new DoctorController;
 
 // checking patient list. 
 if(empty($_POST['patient_name']))
 {
-	
+	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
+	var_dump($Doccontrollerobject->getQueryData());
 }
 // checking patient details. 
 else if (!empty($_POST ['patient_name']))
