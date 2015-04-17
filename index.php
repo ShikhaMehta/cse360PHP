@@ -72,19 +72,20 @@ error_reporting(-1);
 
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
+			//------Shikha's Code - to get to LoginWebInterface----------
 			echo "<form action=\"LoginWebInterface.php\" method=\"post\">";
 			echo " Go to Login Page";
 			echo "<br><br>";
 			echo "<input type=\"submit\"></CENTER>";
 			echo "</form>";
-			
+			//--------------------End Shikha's Code ----------------------
 			//include 'LoginWebInterface.php';
 		} else {
 			if ($_SESSION['user_type'] == 'DOCTOR') {
 			// if the user has logged in and it is a Doctor,
 			//   call the doctor interface function
-			echo "I am a doctor";
-				//include 'DoctorWebInterface.php';
+			
+				include 'DoctorWebInterface.php';
 			} else if ($_SESSION['user_type'] == 'PATIENT') {
 			// if the user has logged in and it is a patient,
 			//   call the patient interface function
