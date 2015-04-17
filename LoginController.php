@@ -19,13 +19,13 @@ $password = $_POST["password"];
 class LoginWebInterface extends Controller
 {
 	// publicsetQueryString - sets query string to query database
-	protected function publicsetQueryString($newQueryString) 
+	public function publicsetQueryString($newQueryString) 
 	{
 		return parent::setQueryString($newQueryString);
 	}
 	
 	//parseDatabaseReturnInfo - parses what the database returns
-	protected function parseDatabaseReturnInfo() 
+	public function parseDatabaseReturnInfo() 
 	{
 		$result = publicgetQueryData();
 		if (mysqli_num_rows($result) > 0)
@@ -143,12 +143,12 @@ class LoginWebInterface extends Controller
 	header("Location: http://engineers-withoutborders.rhcloud.com/login_error.html");
  }
 
-	protected function publicqueryDatabase() 
+	public function publicqueryDatabase() 
 	{
 		return parent::queryDatabase();
 	}
 	
-	protected function publicgetQueryData()
+	public function publicgetQueryData()
 	{
 		return parent::getQueryData();
 	}
