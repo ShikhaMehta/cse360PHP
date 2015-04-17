@@ -22,7 +22,7 @@
 //
 //
 ------------------------------------------------*/
-
+require 'Controller.php';
 Class DoctorController extends Controller
 {
 	function __construct() 
