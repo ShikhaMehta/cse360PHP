@@ -72,6 +72,7 @@ error_reporting(-1);
 
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
+			//echo " Click here to login";
 			
 			include 'LoginWebInterface.php';
 		} else {
