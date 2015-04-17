@@ -41,6 +41,7 @@ Class DoctorController extends Controller
 		$longquerystring .= ' doctor.Pat2Name = patient.PatientName AND doctor.Pat3Name = patient.PatientName AND';
 		$longquerystring .= ' doctor.Pat4Name = patient.PatientName AND doctor.Pat5Name = patient.PatientName';
 		$longquerystring .= " WHERE doctor.DoctorName = '$DoctorName'";
+		$longquerystring  = "SELECT * FROM doctor WHERE doctor.DoctorName = '$DoctorName'";
 		$this->setQueryString($longquerystring);
 		$this->queryDatabase(); 
 		
