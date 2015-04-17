@@ -45,7 +45,7 @@ class LoginWebInterface extends Controller
 				{
 					echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>";
 					$_SESSION['current_user'] = $username;
-					$_SESSION['user_type'] == $DoctorOrPatient';
+					$_SESSION['user_type'] == $DoctorOrPatient;
 					//echo "<form action=\"index.php\" method=\"post\">";
 					//echo "<h2>Welcome Back $username</h2>";
 					// call PatientWebInterface
