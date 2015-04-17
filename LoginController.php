@@ -35,7 +35,7 @@ class LoginWebInterface extends Controller
 					echo "This is a Doctor";
 					$_SESSION['current_user'] = username;
 					$_SESSION['user_type'] = 'DOCTOR';
-					echo "<form action=\"index.php\" method=\"post\">";
+					//echo "<form action=\"index.php\" method=\"post\">";
 					// call DoctorWebInterface
 					///include ('index.php');
 					//echo "<h2>Welcome Back $username</h2>";
@@ -43,10 +43,10 @@ class LoginWebInterface extends Controller
 				}
 				else if ($DoctorOrPatient == "Patient")
 				{
-					echo "This is a patient";
+					echo "This is a Patient";
 					$_SESSION['current_user'] = username;
 					$_SESSION['user_type'] == 'PATIENT';
-					echo "<form action=\"index.php\" method=\"post\">";
+					//echo "<form action=\"index.php\" method=\"post\">";
 					//echo "<h2>Welcome Back $username</h2>";
 					// call PatientWebInterface
 					//include ('index.php');
