@@ -22,7 +22,7 @@ class LoginWebInterface extends Controller
 	// publicsetQueryString - sets query string to query database
 	protected function publicsetQueryString($newQueryString) 
 	{
-		return parent::setQueryString($newQueryString);
+		parent::setQueryString($newQueryString);
 	}
 	
 	//parseDatabaseReturnInfo - parses what the database returns
@@ -70,12 +70,12 @@ class LoginWebInterface extends Controller
 
 	protected function publicqueryDatabase() 
 	{
-		return parent::queryDatabase();
+		 parent::queryDatabase();
 	}
 	
 	protected function publicgetQueryData()
 	{
-		return parent::getQueryData();
+		 parent::getQueryData();
 	}
 }
 
