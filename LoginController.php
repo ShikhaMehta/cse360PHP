@@ -27,7 +27,7 @@ class LoginWebInterface extends Controller
 	//parseDatabaseReturnInfo - parses what the database returns
 	public function parseDatabaseReturnInfo() 
 	{
-		$result = publicgetQueryData();
+		$result = $this->publicgetQueryData();
 		if (mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_assoc($result)) 
