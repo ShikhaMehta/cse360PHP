@@ -72,9 +72,13 @@ error_reporting(-1);
 
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
-			//echo " Click here to login";
+			echo "<form action=\"LoginWebInterface.php\" method=\"post\">";
+			echo " Go to Login Page";
+			echo "<br><br>";
+			echo "<input type=\"submit\"></CENTER>";
+			echo "</form>";
 			
-			include 'LoginWebInterface.php';
+			//include 'LoginWebInterface.php';
 		} else {
 			if ($_SESSION['user_type'] == 'DOCTOR') {
 			// if the user has logged in and it is a Doctor,
