@@ -22,7 +22,7 @@
 ------------------------------------------------*/
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
-$_POST['patient_name'] = 'Patient1';
+$_POST['patient_name'] = 'Patient2';
 
 // checking patient list. 
 if(empty($_POST['patient_name']))
@@ -34,7 +34,25 @@ if(empty($_POST['patient_name']))
 else if (!empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->listOfDetails($_POST['patient_name']);
-	var_dump($Doccontrollerobject->getQueryData());
+	
+	
+	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) 
+	{
+		
+		echo '<table>';
+		
+	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData())) 
+		 {
+			 echo '<tr>';
+	          echo "<td> $row['Symptom1'] </td>";//  <td> $row['Symptom2'] </td> <td> $row['Symptom3'] </td> <td> $row['Symptom4'] </td> <td> $row['Symptom5'] </td> " ;
+			 echo '</tr>';
+	     }
+		 
+		 echo '</table>';
+		 
+		 
+		 
+	}
 }
 // redirect to index. 
 else
