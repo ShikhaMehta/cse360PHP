@@ -71,10 +71,24 @@ Class DoctorController extends Controller
 	public function listOfDetails($PatientName)
 	{
 		//Setting the query string to all symptoms for the input patientName
-		$this->setQueryString("SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName='$PatientName'");
+		//$this->setQueryString("SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName='$PatientName'");
 		$this->setQueryString("SELECT * FROM patient");
 		$this->queryDatabase();
-		var_dump($this->queryData);
+		//var_dump($this->queryData);
+		if (mysqli_num_rows($this->getQueryData()) > 0) 
+	{
+		
+		
+		
+	     while ($row = mysqli_fetch_assoc($this->getQueryData())) 
+		 {
+			 
+			 echo $row['PatientName'];
+	          //echo '<td>' . $row['Symptom1'] . '</td><td>' . $row['Symptom2'] . '</td><td>' . $row['Symptom3'] . '</td><td>' . $row['Symptom4'] . '</td><td>' . $row['Symptom5'] . '</td>';
+	     }
+		  
+		 
+	}
 		
 		
 	}
