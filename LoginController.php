@@ -40,7 +40,7 @@ class LoginWebInterface extends Controller
 					///include ('index.php');
 					//echo "<h2>Welcome Back $username</h2>";
 					exit;
-				}
+				}//if
 				else if ($DoctorOrPatient == "Patient")
 				{
 					echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>";
@@ -50,21 +50,15 @@ class LoginWebInterface extends Controller
 					//echo "<h2>Welcome Back $username</h2>";
 					// call PatientWebInterface
 					//include ('index.php');
-					//echo "<html>";
+					
 					
 				exit;
-				}
-			else
-			{
-				echo "$username $password $DoctorOrPatient<br>";
-				echo "there seems to be an error <br>. Please check entry in the database";
-				exit;
-			}
-			exit;
-		}
-	}
-	header("Location: http://engineers-withoutborders.rhcloud.com/login_error.html");
- }
+				}//else if
+
+			}//while
+		}//if
+
+	}//protected function parseDatabaseReturnInfo()
 
 	protected function publicqueryDatabase() 
 	{
