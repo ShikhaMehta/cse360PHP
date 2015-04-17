@@ -75,12 +75,12 @@ Class DoctorController extends Controller
 		$this->setQueryString("SELECT * FROM patient");
 		$this->queryDatabase();
 		//var_dump($this->queryData);
-		if (mysqli_num_rows($this->getQueryData()) > 0) 
+		if (mysqli_num_rows($this->queryData) > 0) 
 	{
 		
 		
 		
-	     while ($row = mysqli_fetch_assoc($this->getQueryData())) 
+	     while ($row = mysqli_fetch_assoc($this->queryData)) 
 		 {
 			 
 			 echo $row['PatientName'];
