@@ -38,18 +38,18 @@ else if (!empty($_POST['patient_name']))
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) 
 	{
-		?>
-		<table>
-		<?php
+		
+		echo '<table>';
+		
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData())) 
 		 {
 			 echo '<tr>';
 	          echo "<td> $row['Symptom1'] </td> <td> $row['Symptom2'] </td> <td> $row['Symptom3'] </td> <td> $row['Symptom4'] </td> <td> $row['Symptom5'] </td> " ;
 			 echo '</tr>';
 	     }
-		 ?>
-		 </table>
-		 <?php
+		 
+		 echo '</table>';
+		 
 		 
 		 
 	}
