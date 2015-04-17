@@ -1,6 +1,10 @@
 <?php 
 //LoginWebInterface - basically spits out the HTM
-echo "<form action=\"index.php\" method=\"post\">";
+echo "<html>";
+echo "<title>Engineers without borders</title>";
+echo "<link rel=\"stylesheet\" href=\"project.css\" />";
+echo "<body>";
+
 echo "<CENTER> Welcome.  Please login with your username and password below.<br>"; 
 echo "<br><br><br><br><br><br>";
 echo "<form action=\"LoginController.php\" method=\"post\">";
