@@ -47,18 +47,17 @@ Class DoctorController extends Controller
 			
 			for ($i = 1; $i <= 5; $i++)
 			{
-				
 				$currentpatient = 'Pat' . $i . 'Name'; 
 				$this->setQueryString('SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName =' . $doctorresults["$currentpatient"]);
 				$this->queryDatabase(); // query for each patient's symptoms. 
 				// calculating mean for each patient.
-				if(mysqli_num_rows($this->queryData) > 0)
+				/*if(mysqli_num_rows($this->queryData) > 0)
 				{
 					$symptomresults = mysqli_fetch_assoc($this->queryData);
 					$currentpatientindex = 'patient' . $i; 
 					$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
 					$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
-				}
+				}*/
 			}
 		}
 	}
