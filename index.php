@@ -83,8 +83,8 @@ error_reporting(-1);
 			if ($_SESSION['user_type'] == 'DOCTOR') {
 			// if the user has logged in and it is a Doctor,
 			//   call the doctor interface function
-			
-				include 'DoctorWebInterface.php';
+			echo "I am a doctor";
+				//include 'DoctorWebInterface.php';
 			} else if ($_SESSION['user_type'] == 'PATIENT') {
 			// if the user has logged in and it is a patient,
 			//   call the patient interface function
