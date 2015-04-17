@@ -22,6 +22,7 @@ class LoginWebInterface extends Controller
 	protected function parseDatabaseReturnInfo() 
 	{
 		$result = publicgetQueryData();
+		echo "debug1";
 		if (mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_assoc($result)) 
@@ -76,7 +77,9 @@ class LoginWebInterface extends Controller
 $test = new LoginWebInterface();
 
 $test->publicsetQueryString("SELECT * FROM `authentication` WHERE username = '$username' and password = '$password';");
+echo "debug2";
 $test->publicqueryDatabase();
+echo "debug3";
 $test->parseDatabaseReturnInfo();
 
 
