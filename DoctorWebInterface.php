@@ -22,6 +22,7 @@
 ------------------------------------------------*/
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
+$_POST['patient_name'] = 'Patient1';
 
 // checking patient list. 
 if(empty($_POST['patient_name']))
@@ -30,9 +31,10 @@ if(empty($_POST['patient_name']))
 	var_dump($Doccontrollerobject->getQueryData());
 }
 // checking patient details. 
-else if (!empty($_POST ['patient_name']))
+else if (!empty($_POST['patient_name']))
 {
-	
+	$Doccontrollerobject->listOfDetails($_POST['patient_name']);
+	var_dump($Doccontrollerobject->getQueryData());
 }
 // redirect to index. 
 else
