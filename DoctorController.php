@@ -22,7 +22,7 @@
 //
 //
 ------------------------------------------------*/
-$_SESSION
+
 Class DoctorController extends Controller
 {
 	function __construct() 
