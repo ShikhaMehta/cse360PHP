@@ -3,17 +3,17 @@
 // Adam Nunez and Oluwatosin Ajayi
 //
 //  Extends:
-//  None.
+//  Controller. 
 //
 //  Extended by:
 //  None.
 //
 //
-//  Extended by:
-//    NONE
+//  Requires:
+//  NONE
 //
 //  Required by:
-//    NONE
+//  NONE
 //
 //  Attributes:
 //    $_SESSION  // holds session information for use by other scripts
@@ -22,7 +22,7 @@
 //
 //
 ------------------------------------------------*/
-
+$_SESSION
 Class DoctorController extends Controller
 {
 	function __construct() 
@@ -30,7 +30,15 @@ Class DoctorController extends Controller
 		parent::__construct();
 	}
 	
+	// created by Oluwatosin Ajayi. 
+	// 
+	public function querydoctordatabases() 
+	{
+		$this->queryDatabase(); 
+		
+	}
 	//Written by Adam Nunez
+
 public function listOfDetails($PatientName)
 	{
 		//Setting the query string to all symptoms for the input patientName

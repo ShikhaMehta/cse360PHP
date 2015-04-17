@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------------------
-// Adam Nunez and Oluwatosin Ajayi
+//  Adam Nunez and Oluwatosin Ajayi
 //
 //  Extends:
 //  None.
@@ -10,17 +10,32 @@
 //
 //
 //  Extended by:
-//    NONE
+//  None.
 //
 //  Required by:
-//    NONE
+//  None.
 //
 //  Attributes:
-//    $_SESSION  // holds session information for use by other scripts
+//  $_SESSION.  // holds session information for use by other scripts.
 //
 //
 ------------------------------------------------*/
+require 'DoctorController.php';
 
-
-
+// checking patient list. 
+if(empty($_POST['patient_name']))
+{
+	
+}
+// checking patient details. 
+else if (!empty($_POST ['patient_name']))
+{
+	
+}
+// redirect to index. 
+else
+{
+	
+}
 ?>
+
