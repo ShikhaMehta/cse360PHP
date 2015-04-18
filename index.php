@@ -90,7 +90,7 @@ error_reporting(-1);
 			// if the user has logged in and it is a patient,
 			//   call the patient interface function
 			//echo "Shikha's code works for patient";
-				include 'PatientWebInterface.php';
+				header('Location: http://engineers-withoutborders.com/PatientWebInterface.php');
 			} else {
 				// if the session has user_type stored as something else,
 				//   let the user know there was an error and attempt to reset
