@@ -89,8 +89,8 @@ error_reporting(-1);
 			} else if ($_SESSION['user_type'] == 'PATIENT') {
 			// if the user has logged in and it is a patient,
 			//   call the patient interface function
-			echo "Shikha's code works for patient";
-				//include 'PatientWebInterface.php';
+			//echo "Shikha's code works for patient";
+				include 'PatientWebInterface.php';
 			} else {
 				// if the session has user_type stored as something else,
 				//   let the user know there was an error and attempt to reset
