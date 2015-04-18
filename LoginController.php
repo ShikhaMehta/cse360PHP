@@ -46,13 +46,13 @@ class LoginWebInterface extends Controller
 				if($DoctorOrPatient == "Doctor")
 				{
 					$_SESSION['user_type'] = 'DOCTOR';
-					include 'index.php';
+					header('Location: engineers-withoutborders.com/index.php');
 					exit;
 				}
 				else if ($DoctorOrPatient == "Patient")
 				{
 					$_SESSION['user_type'] = 'PATIENT';
-					include 'index.php';
+					header('Location: engineers-withoutborders.com/index.php');
 					exit;
 				}
 			else
