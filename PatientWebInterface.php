@@ -13,7 +13,7 @@ echo "<html>";
 			echo "<title>Patient Symptoms Page</title>";
 			echo "<body>";
 
-			echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
+			echo "<h2><CENTER> Welcome $_SESSION['current_user'].  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
 			echo "<br><br>";
 			echo "<form action=\"patient.php\" method=\"post\">";
 			echo " <h2>Are you experiencing any pain?</h2>";
