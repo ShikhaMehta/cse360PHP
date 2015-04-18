@@ -39,13 +39,13 @@ class LoginWebInterface extends Controller
 				$username = $row["username"];
 				$password = $row["password"];
 				$DoctorOrPatient = $row["DoctorOrPatient"];
+				
 				// Customize the html displayed here depending on if the person is a doctor or a patient
-				$_SESSION[''current_user''] = $username;
+				$_SESSION['current_user'] = $username;
+				
 				if($DoctorOrPatient == "Doctor")
 				{
 					$_SESSION['user_type'] = 'DOCTOR';
-					// call DoctorWebInterface
-					//include ('DoctorWebInterface.php');
 					echo "<h2>Welcome Back $username</h2>";
 					exit;
 				}
