@@ -46,13 +46,13 @@ class LoginWebInterface extends Controller
 				if($DoctorOrPatient == "Doctor")
 				{
 					$_SESSION['user_type'] = 'DOCTOR';
-					echo "<h2>Welcome Back $username</h2>";
+					include 'index.php';
 					exit;
 				}
 				else if ($DoctorOrPatient == "Patient")
 				{
 					$_SESSION['user_type'] = 'PATIENT';
-
+					include 'index.php';
 					exit;
 				}
 			else
