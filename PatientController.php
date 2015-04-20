@@ -21,8 +21,11 @@
 ------------------------------------------------*/
 require 'Controller.php';
 Class PatientController extends Controller
+{
 	function __construct() 
 	{
 		parent::__construct();
+
 	}
+}
 ?>
