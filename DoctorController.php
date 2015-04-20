@@ -29,7 +29,7 @@ Class DoctorController extends Controller
 	{
 		parent::__construct();
 	}
-	
+	// testing pushing 
 	// Written by Oluwatosin Ajayi. 
 	// used for storing the patient's symptom numbers for results of the mean.  
 	public $patients;
