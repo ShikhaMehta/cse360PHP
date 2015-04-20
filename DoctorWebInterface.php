@@ -38,7 +38,7 @@ require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
 // checking patient list. 
-/*if(empty($_POST['patient_name']))
+if(empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	
@@ -55,7 +55,7 @@ $Doccontrollerobject = new DoctorController;
 	
 	echo '</table>';
 	
-}*/
+}
 // checking patient details. 
 else if (!empty($_POST['patient_name']))
 {
