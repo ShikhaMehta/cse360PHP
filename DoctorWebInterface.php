@@ -6,12 +6,13 @@ error_reporting(-1);
 
 $username = $_SESSION['current_user'];
 
-echo "<html>";
-			echo "<title>Patient Symptoms Page</title>";
-			echo "<body>";
+//echo "<html>";
+//			echo "<title>Patient Symptoms Page</title>";
+//			echo "<body>";
 
-			echo "<h2><CENTER> Welcome $username <br></h2>"; 
-			echo "<br><br>";
+//			echo "<h2><CENTER> Welcome $username <br></h2>"; 
+//			echo "<br><br>";
+
 /*------------------------------------------------
 //  Adam Nunez and Oluwatosin Ajayi
 //
@@ -32,13 +33,12 @@ echo "<html>";
 //  $_SESSION.  // holds session information for use by other scripts.
 //
 //
-------------------------------------------------
+------------------------------------------------*/
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
-
 // checking patient list. 
-if(empty($_POST['patient_name']))
+/*if(empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	
@@ -55,7 +55,7 @@ if(empty($_POST['patient_name']))
 	
 	echo '</table>';
 	
-}
+}*/
 // checking patient details. 
 else if (!empty($_POST['patient_name']))
 {
@@ -84,6 +84,6 @@ else if (!empty($_POST['patient_name']))
 else
 {
 	
-}*/
+}
 ?>
 
