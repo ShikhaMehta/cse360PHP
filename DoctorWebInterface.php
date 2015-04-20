@@ -39,16 +39,19 @@ $Doccontrollerobject = new DoctorController;
 // checking patient list. 
 if(empty($_POST['patient_name']))
 {
-	echo "<h2><CENTER> Welcome $username.  P.<br></h2>"; 
+	echo "<h2><CENTER> Welcome $username.<br></h2>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	$patientsarray = $Doccontrollerobject->patients; 
 	echo '<table>';
-	for($i = 1; $i<= 5; $i++)
+	echo  '<tr>';
+	echo   '<td>'. $patient1name '</td>';
+	echo '</tr>';
+	/*for($i = 1; $i<= 5; $i++)
 	{	
 		echo '<tr>';
 	    echo '<td>' . $patientsarray['patient' . $i . 'name'] . '</td> <td>' . $patientsarray['patient' . $i . 'mean'] . ' </td>';
 		echo '</tr>';	 
-	}
+	}*/
 	
 	echo '</table>';
 	

@@ -51,6 +51,8 @@ Class DoctorController extends Controller
 				$this->setQueryString('SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName =' . $doctorresults["$currentpatient"]);
 				$this->queryDatabase(); // query for each patient's symptoms. 
 				// calculating mean for each patient.
+				
+				// putting comment here
 				/*if(mysqli_num_rows($this->queryData) > 0)
 				{
 					$symptomresults = mysqli_fetch_assoc($this->queryData);
