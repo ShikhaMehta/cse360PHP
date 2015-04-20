@@ -36,7 +36,7 @@ Class DoctorController extends Controller
 	public function querydoctordatabases($DoctorName) 
 	{	
 		// Getting the list of the doctor's patients. 	
-		$this->setQueryString("SELECT * FROM doctor WHERE DoctorName = '$DoctorName'");
+		$this->setQueryString("SELECT * FROM patientdb.doctor WHERE DoctorName = '$DoctorName'");
 		$this->queryDatabase(); 
 		// When the query data is greater than zero. When there are results. 
 		if (mysqli_num_rows($this->queryData) > 0) 

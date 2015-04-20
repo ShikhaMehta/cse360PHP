@@ -1,4 +1,17 @@
 <?php
+// error reporting REMOVE BEFORE FINAL COMMIT !!!++++=================================================++++!+!+!!!!
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+
+$username = $_SESSION['current_user'];
+
+echo "<html>";
+			echo "<title>Patient Symptoms Page</title>";
+			echo "<body>";
+
+			echo "<h2><CENTER> Welcome $username <br></h2>"; 
+			echo "<br><br>";
 /*------------------------------------------------
 //  Adam Nunez and Oluwatosin Ajayi
 //
@@ -19,7 +32,7 @@
 //  $_SESSION.  // holds session information for use by other scripts.
 //
 //
-------------------------------------------------*/
+------------------------------------------------
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
@@ -71,6 +84,6 @@ else if (!empty($_POST['patient_name']))
 else
 {
 	
-}
+}*/
 ?>
 
