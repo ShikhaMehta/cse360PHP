@@ -43,18 +43,15 @@ if(empty($_POST['patient_name']))
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	$patientsarray = $Doccontrollerobject->patients; 
 	echo '<table>';
-	echo  '<tr>';
-	echo   '<td>'. $patient1name '</td>';
-	echo '</tr>';
-	/*for($i = 1; $i<= 5; $i++)
+
+	for($i = 1; $i<= 5; $i++)
 	{	
 		echo '<tr>';
 	    echo '<td>' . $patientsarray['patient' . $i . 'name'] . '</td> <td>' . $patientsarray['patient' . $i . 'mean'] . ' </td>';
 		echo '</tr>';	 
-	}*/
+	}
 	
 	echo '</table>';
-	
 }
 // checking patient details. 
 if (!empty($_POST['patient_name']))
