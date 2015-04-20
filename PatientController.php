@@ -27,5 +27,10 @@ Class PatientController extends Controller
 		parent::__construct();
 
 	}
+	
+	public function querypatientdatabase($PatientName)
+	{
+		
+	}
 }
 ?>
