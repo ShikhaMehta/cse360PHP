@@ -12,7 +12,6 @@ $username = $_SESSION['current_user'];
 
 //			echo "<h2><CENTER> Welcome $username <br></h2>"; 
 //			echo "<br><br>";
-
 /*------------------------------------------------
 //  Adam Nunez and Oluwatosin Ajayi
 //
