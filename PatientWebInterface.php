@@ -1,4 +1,26 @@
-<?php 
+<?php
+
+/*------------------------------------------------
+//  by: Shikha Mehta and Alisha Geis
+//
+//  Extends:
+//  None.
+//
+//  Extended by:
+//  None.
+//
+//
+//  Extended by:
+//  None.
+//
+//  Required by:
+//  None.
+//
+//  Attributes:
+//  $_SESSION.  // holds session information for use by other scripts.
+//
+//
+------------------------------------------------*/ 
 
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
@@ -10,6 +32,9 @@ ini_set('display_startup_errors',1);
 error_reporting(-1);
 
 $username = $_SESSION['current_user'];
+
+require 'PatientController.php';
+$Patcontrollerobject = new PatientController;
 
 echo "<html>";
 			echo "<title>Patient Symptoms Page</title>";

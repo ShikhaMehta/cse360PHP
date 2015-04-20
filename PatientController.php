@@ -16,7 +16,8 @@
 //  NONE
 //
 //  Attributes:
-//    $_SESSION  // holds session information for use by other scripts
+//  $_SESSION  // holds session information for use by other scripts
+//  $_POST	   // used to collect form data after submitting an HTML form
 ------------------------------------------------*/
 require 'Controller.php';
 Class PatientController extends Controller
