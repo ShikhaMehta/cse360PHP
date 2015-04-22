@@ -133,7 +133,11 @@ if (empty($_POST ['Symptom1']))
 else
 {	
 	require 'PatientController.php';
-	var_dump($_POST);
+	echo $_POST['Symptom1'];
+		echo $_POST['Symptom2'];
+			echo $_POST['Symptom3'];
+				echo $_POST['Symptom4'];
+					echo $_POST['Symptom5'];
 }
 
 ?> 
