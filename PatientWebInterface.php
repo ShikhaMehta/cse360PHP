@@ -128,14 +128,12 @@ if (empty($_POST ['Symptom1']))
 			<input type="submit">
 			</CENTER>
 			</form>
-			</body>
-			</html>
 <?php
 }
 else
 {	
 	require 'PatientController.php';
-	echo "DO SUBMISSION";
+	var_dump($_POST);
 }
 
 ?> 
