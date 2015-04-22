@@ -56,29 +56,23 @@ $Patcontrollerobject = new PatientController;
 
 if (empty($_POST ['Symptom1']))
 {
-	echo "OUTPUT FORM";	
-			/*
-			<form>
-			echo "<html>";
-			echo "<title>Patient Symptoms Page</title>";
-			echo "<body>";
-
-			echo "<h2><CENTER> Welcome $username.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
+	//echo "OUTPUT FORM";
+			echo "<h2><CENTER> Welcome $username. Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
 			echo "<br><br>";
-			echo "<form action=\"patient.php\" method=\"post\">";
-			echo " <h2>Are you experiencing any pain?</h2>";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_1\"> 1 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_2\"> 2 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_3\"> 3 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_4\"> 4 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_5\"> 5 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_6\"> 6 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_7\"> 7 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_8\"> 8 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_9\"> 9 ";
-			echo "<input type=\"radio\" name=\"pain\" value=\"pain_10\"> 10 ";
+			<form action="index.php" method="post">
+			<h2>Are you experiencing any pain?</h2>
+			<input type="radio" name="Symptom1" value="1"> 1 </input>
+			<input type="radio" name="Symptom1" value="1"> 2 </input>
+			<input type="radio" name="Symptom1" value="1"> 3 </input>
+			<input type="radio" name="Symptom1" value="1"> 4 </input>
+			<input type="radio" name="Symptom1" value="1"> 5 </input>
+			<input type="radio" name="Symptom1" value="1"> 6 </input>
+			<input type="radio" name="Symptom1" value="1"> 7 </input>
+			<input type="radio" name="Symptom1" value="1"> 8 </input>
+			<input type="radio" name="Symptom1" value="1"> 9 </input>
+			<input type="radio" name="Symptom1" value="1"> 10 </input>
 			
-			echo "<br><br>";
+			/*echo "<br><br>";
 			echo " <h2>Are you drowsy?</h2>";
 			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_1\"> 1 ";
 			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_2\"> 2 ";
