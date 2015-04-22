@@ -49,8 +49,7 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1);
 
-require 'PatientController.php';
-$Patcontrollerobject = new PatientController;
+
 
 if (empty($_POST['Symptom1']))
 {
@@ -129,24 +128,11 @@ if (empty($_POST['Symptom1']))
 <?php
 }
 else
-{	
-	//PatientController -> submitSymptoms()
-	//if (submit_success)
-	//{
-	//	patient symptoms are submitted
-	//	print "SUCCESS" message to user
-	//	$_SESSION['user_type'] = "";
-	//}
-	//else
-	//{
-	//	there was an error
-	//	TRY AGAIN button
-	//}
-	echo $_POST['Symptom1'];
-	echo $_POST['Symptom2'];
-	echo $_POST['Symptom3'];
-	echo $_POST['Symptom4'];
-	echo $_POST['Symptom5'];
+{
+	require 'PatientController.php';
+	$Patcontrollerobject = new PatientController;
+	$Patcontrollerobject->submitSymptoms($_SESSION['current_user'], $_POST['Symptom1'], $_POST['Symptom2'], $_POST['Symptom3'], $_POST['Symptom4'], $_POST['Symptom5']);
+	var_dump($Patcontrollerobject->getQueryData());
 }
 
 ?> 
