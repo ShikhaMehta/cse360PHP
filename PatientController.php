@@ -28,33 +28,5 @@ Class PatientController extends Controller
 
 	}
 	
-	/*---TEMPLATE CODE: PatientWebInterface.php
-	
-	if ($_POST['symptom1'])
-	{
-		PatientController -> submitSymptoms()
-		if (submit_success)
-		{
-			//symptoms submitted
-			//OKAY button
-			$_SESSION['user_type'] = "";
-		}
-		else
-		{
-			//there was an error
-			//TRY AGAIN button
-		}
-	}
-	
-	<form method = POST action = index.php>
-	//all symptom stuff
-	</form>
-	
-	---END TEMPLATE*/
-	
-	public function querypatientdatabase($PatientName)
-	{
-		
-	}
 }
 ?>

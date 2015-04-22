@@ -22,21 +22,44 @@
 //
 ------------------------------------------------*/ 
 
-if (session_status() == PHP_SESSION_NONE) {
-	session_start();
-}
+	/*---TEMPLATE CODE: PatientWebInterface.php
+	
+	if ($_POST['symptom1'])
+	{
+		PatientController -> submitSymptoms()
+		if (submit_success)
+		{
+			//symptoms submitted
+			//OKAY button
+			$_SESSION['user_type'] = "";
+		}
+		else
+		{
+			//there was an error
+			//TRY AGAIN button
+		}
+	}
+	
+	<form method = POST action = index.php>
+	//all symptom stuff
+	</form>
+	
+	---END TEMPLATE*/
 
 // error reporting REMOVE BEFORE FINAL COMMIT !!!++++=================================================++++!+!+!!!!
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1);
 
-$username = $_SESSION['current_user'];
-
 require 'PatientController.php';
 $Patcontrollerobject = new PatientController;
 
-echo "<html>";
+if (empty($_POST ['Symptom1']))
+{
+	echo "OUTPUT FORM";	
+			/*
+			<form>
+			echo "<html>";
 			echo "<title>Patient Symptoms Page</title>";
 			echo "<body>";
 
@@ -112,6 +135,13 @@ echo "<html>";
 			echo "</form>";
 			echo "</body>";
 			echo "</html>";
-
+			</form>
+			*/
+}
+else
+{	
+	require 'PatientController.php';
+	echo "DO SUBMISSION";
+}
 
 ?> 
