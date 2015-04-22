@@ -57,7 +57,7 @@ $Patcontrollerobject = new PatientController;
 if (empty($_POST ['Symptom1']))
 {
 ?>
-			<h2><CENTER> Welcome <?php $_SESSION['current_user'] ?>.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>
+			<h2><CENTER> Welcome <?php echo $_SESSION['current_user']; ?>.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>
 			<br><br>
 			<form action="index.php" method="post">
 			<h2>Are you experiencing any pain?</h2>
