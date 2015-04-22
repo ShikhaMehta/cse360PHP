@@ -25,8 +25,13 @@ Class PatientController extends Controller
 	function __construct() 
 	{
 		parent::__construct();
-
 	}
-	
+	public function submitSymptoms($patientName, $symptom1, $symptom2, $symptom3, $symptom4, $symptom5)
+	{
+		//query string
+		$this->setQueryString("INSERT INTO patient VALUES ($patientName, $symptom1, $symptom2, $symptom3, $symptom4, $symptom5, NOW())");
+		$this->queryDatabase();
+		var_dump($this->getQueryData());
+	}
 }
 ?>
