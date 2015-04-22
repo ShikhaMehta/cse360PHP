@@ -62,76 +62,75 @@ if (empty($_POST ['Symptom1']))
 			<form action="index.php" method="post">
 			<h2>Are you experiencing any pain?</h2>
 			<input type="radio" name="Symptom1" value="1"> 1 </input>
-			<input type="radio" name="Symptom1" value="1"> 2 </input>
-			<input type="radio" name="Symptom1" value="1"> 3 </input>
-			<input type="radio" name="Symptom1" value="1"> 4 </input>
-			<input type="radio" name="Symptom1" value="1"> 5 </input>
-			<input type="radio" name="Symptom1" value="1"> 6 </input>
-			<input type="radio" name="Symptom1" value="1"> 7 </input>
-			<input type="radio" name="Symptom1" value="1"> 8 </input>
-			<input type="radio" name="Symptom1" value="1"> 9 </input>
-			<input type="radio" name="Symptom1" value="1"> 10 </input>
-			<?php
+			<input type="radio" name="Symptom1" value="2"> 2 </input>
+			<input type="radio" name="Symptom1" value="3"> 3 </input>
+			<input type="radio" name="Symptom1" value="4"> 4 </input>
+			<input type="radio" name="Symptom1" value="5"> 5 </input>
+			<input type="radio" name="Symptom1" value="6"> 6 </input>
+			<input type="radio" name="Symptom1" value="7"> 7 </input>
+			<input type="radio" name="Symptom1" value="8"> 8 </input>
+			<input type="radio" name="Symptom1" value="9"> 9 </input>
+			<input type="radio" name="Symptom1" value="10"> 10 </input>
+
+			<br><br>
+			<h2>Are you drowsy?</h2>
+			<input type="radio" name="Symptom2" value="1"> 1 </input>
+			<input type="radio" name="Symptom2" value="2"> 2 </input>
+			<input type="radio" name="Symptom2" value="3"> 3 </input>
+			<input type="radio" name="Symptom2" value="4"> 4 </input>
+			<input type="radio" name="Symptom2" value="5"> 5 </input>
+			<input type="radio" name="Symptom2" value="6"> 6 </input>
+			<input type="radio" name="Symptom2" value="7"> 7 </input>
+			<input type="radio" name="Symptom2" value="8"> 8 </input>
+			<input type="radio" name="Symptom2" value="9"> 9 </input>
+			<input type="radio" name="Symptom2" value="10"> 10 </input>
 			
-			/*echo "<br><br>";
-			echo " <h2>Are you drowsy?</h2>";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_1\"> 1 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_2\"> 2 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_3\"> 3 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_4\"> 4 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_5\"> 5 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_6\"> 6 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_7\"> 7 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_8\"> 8 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_9\"> 9 ";
-			echo "<input type=\"radio\" name=\"drowsy\" value=\"drowsy_10\"> 10 ";
+			<br><br>
+			<h2>Do you have feelings of nausea?</h2>
+			<input type="radio" name="Symptom3" value="1"> 1 </input>
+			<input type="radio" name="Symptom3" value="2"> 2 </input>
+			<input type="radio" name="Symptom3" value="3"> 3 </input>
+			<input type="radio" name="Symptom3" value="4"> 4 </input>
+			<input type="radio" name="Symptom3" value="5"> 5 </input>
+			<input type="radio" name="Symptom3" value="6"> 6 </input>
+			<input type="radio" name="Symptom3" value="7"> 7 </input>
+			<input type="radio" name="Symptom3" value="8"> 8 </input>
+			<input type="radio" name="Symptom3" value="9"> 9 </input>
+			<input type="radio" name="Symptom3" value="10"> 10 </input>
 			
-			echo "<br><br>";
-			echo " <h2>Do you have feelings of Nausea?</h2>";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_1\"> 1 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_2\"> 2 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_3\"> 3 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_4\"> 4 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_5\"> 5 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_6\"> 6 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_7\"> 7 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_8\"> 8 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_9\"> 9 ";
-			echo "<input type=\"radio\" name=\"nausea\" value=\"nausea_10\"> 10 ";
+			<br><br>
+			<h2>Do you feel anxious?</h2>
+			<input type="radio" name="Symptom4" value="1"> 1 </input>
+			<input type="radio" name="Symptom4" value="2"> 2 </input>
+			<input type="radio" name="Symptom4" value="3"> 3 </input>
+			<input type="radio" name="Symptom4" value="4"> 4 </input>
+			<input type="radio" name="Symptom4" value="5"> 5 </input>
+			<input type="radio" name="Symptom4" value="6"> 6 </input>
+			<input type="radio" name="Symptom4" value="7"> 7 </input>
+			<input type="radio" name="Symptom4" value="8"> 8 </input>
+			<input type="radio" name="Symptom4" value="9"> 9 </input>
+			<input type="radio" name="Symptom4" value="10"> 10 </input>
 			
-			echo "<br><br>";
-			echo " <h2>Do you feel anxious?</h2>";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_1\"> 1 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_2\"> 2 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_3\"> 3 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_4\"> 4 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_5\"> 5 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_6\"> 6 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_7\"> 7 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_8\"> 8 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_9\"> 9 ";
-			echo "<input type=\"radio\" name=\"anxious\" value=\"anxious_10\"> 10 ";
+			<br><br>
+			<h2>Do you feel depressed?</h2>
+			<input type="radio" name="Symptom5" value="1"> 1 </input>
+			<input type="radio" name="Symptom5" value="2"> 2 </input>
+			<input type="radio" name="Symptom5" value="3"> 3 </input>
+			<input type="radio" name="Symptom5" value="4"> 4 </input>
+			<input type="radio" name="Symptom5" value="5"> 5 </input>
+			<input type="radio" name="Symptom5" value="6"> 6 </input>
+			<input type="radio" name="Symptom5" value="7"> 7 </input>
+			<input type="radio" name="Symptom5" value="8"> 8 </input>
+			<input type="radio" name="Symptom5" value="9"> 9 </input>
+			<input type="radio" name="Symptom5" value="10"> 10 </input>
 			
-			echo "<br><br>";
-			echo " <h2>Do you feel depressed?</h2>";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_1\"> 1 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_2\"> 2 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_3\"> 3 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_4\"> 4 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_5\"> 5 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_6\"> 6 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_7\"> 7 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_8\"> 8 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_9\"> 9 ";
-			echo "<input type=\"radio\" name=\"depressed\" value=\"depressed_10\"> 10 ";
-			
-			echo "<br><br>";
-			echo "<input type=\"submit\"></CENTER>";
-			echo "</form>";
-			echo "</body>";
-			echo "</html>";
+			<br><br>
+			<input type="submit">
+			</CENTER>
 			</form>
-			*/
+			</body>
+			</html>
+<?php
 }
 else
 {	
