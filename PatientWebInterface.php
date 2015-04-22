@@ -56,9 +56,9 @@ $Patcontrollerobject = new PatientController;
 
 if (empty($_POST ['Symptom1']))
 {
-	//echo "OUTPUT FORM";
-			echo "<h2><CENTER> Welcome $username. Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>"; 
-			echo "<br><br>";
+?>
+			<h2><CENTER> Welcome <?php $_SESSION['current_user'] ?>.  Please enter your symptoms on a scale of 1 to 10 with 10 being most severe.<br></h2>
+			<br><br>
 			<form action="index.php" method="post">
 			<h2>Are you experiencing any pain?</h2>
 			<input type="radio" name="Symptom1" value="1"> 1 </input>
@@ -71,6 +71,7 @@ if (empty($_POST ['Symptom1']))
 			<input type="radio" name="Symptom1" value="1"> 8 </input>
 			<input type="radio" name="Symptom1" value="1"> 9 </input>
 			<input type="radio" name="Symptom1" value="1"> 10 </input>
+			<?php
 			
 			/*echo "<br><br>";
 			echo " <h2>Are you drowsy?</h2>";
