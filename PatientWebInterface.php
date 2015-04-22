@@ -142,13 +142,13 @@ else
 	//	there was an error
 	//	TRY AGAIN button
 	//}
-
+/*
 	require 'PatientController.php';
 	echo $_POST['Symptom1'];
 	echo $_POST['Symptom2'];
 	echo $_POST['Symptom3'];
 	echo $_POST['Symptom4'];
-	echo $_POST['Symptom5'];
+	echo $_POST['Symptom5'];*/
 }
 
 ?> 
