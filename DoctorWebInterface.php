@@ -77,7 +77,11 @@ else if (!empty($_POST['patient_name']))
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData())) 
 		 {
 			 echo '<tr>';
-	         echo '<td>' . $row['Symptom1'] . '</td><td>' . $row['Symptom2'] . '</td><td>' . $row['Symptom3'] . '</td><td>' . $row['Symptom4'] . '</td><td>' . $row['Symptom5'] . '</td>';
+	         echo '<td id="' . determineCSSColor($row['Symptom1']) . '">' . $row['Symptom1'] . '</td>';
+	         echo '<td id="' . determineCSSColor($row['Symptom2']) . '">' . $row['Symptom2'] . '</td>';
+	         echo '<td id="' . determineCSSColor($row['Symptom3']) . '">' . $row['Symptom3'] . '</td>';
+	         echo '<td id="' . determineCSSColor($row['Symptom4']) . '">' . $row['Symptom4'] . '</td>';
+	         echo '<td id="' . determineCSSColor($row['Symptom5']) . '">' . $row['Symptom5'] . '</td>';
 			 echo '<td>' . $row['TimeStamp'] . ' </td>';
 			 echo '</tr>';
 	     }	 
