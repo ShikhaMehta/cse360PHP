@@ -4,10 +4,77 @@
 
 body {
 	background-color: lightblue;
+}
+
+/* ---- general font stuff ---- */
+body, div, table, td, form {
 	font-family: Verdana, Arial, "Times New Roman";
 	font-size: 12pt;
 }
+/* ---- end general font stuff ---- */
 
+/* ---- general table stuff ---- */
 table {
 	border: none;
 }
+
+table.patient_list_table td {
+	padding: 10px;
+}
+
+/* ---- end general table stuff ---- */
+
+/* ---- stuff to make patient list icons work like buttons ---- */
+div.patient_icon {
+	width: 100px;
+	height: 124px;
+	text-align: center;
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 4px;
+}
+
+div#patient_green {
+	background-color: limegreen;
+}
+
+div#patient_yellow {
+	background-color: yellow;
+}
+
+div#patient_orange {
+	background-color: orange;
+}
+
+div#patient_red {
+	background-color: red;
+}
+
+div.patient_name {
+	position: relative;
+	margin-top: 20px;
+	font-size: 14pt;
+}
+
+div.patient_pain_number {
+	position: relative;
+	margin-top: 10px;
+	font-size: 38px;
+	font-weight: bold;
+}
+
+div.patient_submit_div {
+	position: absolute;
+	margin-top: 0px;
+	z-index: 3;
+}
+
+.patient_submit_button {
+	z-index: 3;
+	width: 100px;
+	height: 124px;
+	border: none;
+	background: none;
+}
+
+/* ---- end stuff to make patient list icons work like buttons ---- */
