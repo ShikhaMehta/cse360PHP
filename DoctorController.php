@@ -52,16 +52,17 @@ Class DoctorController extends Controller
 				{
 					$currentpatient = 'Pat' . $i . 'Name'; 
 					$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "';");
-					echo $this->getQueryString();
-					/*$this->queryDatabase(); // query for each patient's symptoms. 
+				
+					$this->queryDatabase(); // query for each patient's symptoms. 
 								
 					if(mysqli_num_rows($this->getQueryData()) > 0)
 					{
-						$symptomresults = mysqli_fetch_assoc($this->getQueryData());
-						$currentpatientindex = 'patient' . $i; 
-						$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
-						$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
-					}*/
+						var_dump($this->getQueryData());
+						//$symptomresults = mysqli_fetch_assoc($this->getQueryData());
+						//$currentpatientindex = 'patient' . $i; 
+						//$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
+						//$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
+					}
 				}				
 			}
 		}
