@@ -27,7 +27,26 @@ table.patient_list_table td {
 	width: 120px;
 }
 
-/* ---- end general table stuff ---- */
+/* ---- END general table stuff ---- */
+
+/* ---- styles for color coding patient information ---- */
+
+#patient_green {
+	background-color: limegreen;
+}
+
+#patient_yellow {
+	background-color: yellow;
+}
+
+#patient_orange {
+	background-color: orange;
+}
+
+#patient_red {
+	background-color: red;
+}
+/* ---- END styles for color coding patient information ---- */
 
 /* ---- stuff to make patient list icons work like buttons ---- */
 div.patient_icon {
@@ -37,22 +56,6 @@ div.patient_icon {
 	border-style: solid;
 	border-color: darkgray;
 	border-width: 4px;
-}
-
-div#patient_green {
-	background-color: limegreen;
-}
-
-div#patient_yellow {
-	background-color: yellow;
-}
-
-div#patient_orange {
-	background-color: orange;
-}
-
-div#patient_red {
-	background-color: red;
 }
 
 div.patient_name {
@@ -82,4 +85,4 @@ div.patient_submit_div {
 	background: none;
 }
 
-/* ---- end stuff to make patient list icons work like buttons ---- */
+/* ---- END stuff to make patient list icons work like buttons ---- */
