@@ -48,26 +48,7 @@ if(empty($_POST['patient_name']))
 	?>
 		<td>
 			<form action="index.php" method="post">
-				<div class="patient_icon" id="patient_<?php 
-				
-					// php if elseif statement to determine which color patient
-					//  icon should be based on the severity of their symptoms
-					$severityInt = $patientsarray['patient' . $i . 'mean'];
-					
-					// this prints the rest of the id for the div tag
-					// so that CSS can color it correctly
-					if ($severityInt <= 3) {
-						echo 'green';
-					} else if ($severityInt <= 4 ) {
-						echo 'yellow';
-					} else if ($severityInt <= 7 ) {
-						echo 'orange';
-					} else {
-						echo 'red';
-					}
-				
-				
-					?>">
+				<div class="patient_icon" id="<?php echo determineCSSColor($patientsarray['patient' . $i . 'mean']); ?>">
 					<div class="patient_submit_div">
 						<input class="patient_submit_button" type="submit" value="" />
 					</div>
@@ -107,6 +88,28 @@ else if (!empty($_POST['patient_name']))
 else
 {
 	header('Location: http://engineers-withoutborders.rhcloud.com/index.php');
+}
+
+// ------ determineCSSColor(String) --------
+// by: Gene Dodge
+//
+// this function takes in an integer value (the mean of the patient's symptom scores)
+//  and returns a string to use as the id for the HTML element in order for the CSS
+//  to properly color code it
+function determineCSSColor($intSeverity) {
+	$returnId = "";
+	
+	if ($intSeverity <= 3) {
+		$returnId = 'patient_green';
+	} else if ($intSeverity <= 4 ) {
+		$returnId = 'patient_yellow';
+	} else if ($intSeverity <= 7 ) {
+		$returnId = 'patient_orange';
+	} else {
+		$returnId = 'patient_red';
+	}
+	
+	return $returnId;
 }
 ?>
 
