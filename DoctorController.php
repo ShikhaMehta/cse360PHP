@@ -48,7 +48,7 @@ Class DoctorController extends Controller
 			
 			 if (mysqli_num_rows($this->getQueryData()) > 0) 
 			 {
-				while ($row = mysqli_fetch_assoc($queryData)) 
+				while ($row = mysqli_fetch_assoc($this->getQueryData())) 
 				{
 				echo $row["Pat1Name"] . $row["Pat2Name"] . $row["Pat3Name"] . $row["Pat4Name"] . $row["Pat5Name"]; 	    
 				}
