@@ -44,9 +44,9 @@ Class DoctorController extends Controller
 		if (mysqli_num_rows($this->getQueryData()) > 0) 
 		{
 			// creates an associative array that saves the results.  
-			$doctorresults = mysqli_fetch_assoc ($this->queryData);
+			//$doctorresults = mysqli_fetch_assoc ($this->queryData);
 			
-			 if (mysqli_num_rows($queryData) > 0) 
+			 if (mysqli_num_rows($this->getQueryData()) > 0) 
 			 {
 				while ($row = mysqli_fetch_assoc($queryData)) 
 				{
