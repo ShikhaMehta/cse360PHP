@@ -91,7 +91,7 @@ Class DoctorController extends Controller
 	public function listOfDetails($PatientName)
 	{
 		//Setting the query string to all symptoms for the input patientName
-		$this->setQueryString("SELECT * FROM patient WHERE PatientName='$PatientName'");
+		$this->setQueryString("SELECT * FROM patient WHERE PatientName='$PatientName' ORDER BY TimeStamp DESC;");
 		$this->queryDatabase();
 	}
 }
