@@ -35,7 +35,7 @@ require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
 // checking patient list. 
-echo "<h2><CENTER> Welcome $_SESSION['current_user'].<br></h2>"; 
+echo "<h2><CENTER> Welcome " . $_SESSION['current_user'] . " <br></h2>"; 
 if(empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
