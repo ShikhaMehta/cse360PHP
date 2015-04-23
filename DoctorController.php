@@ -57,11 +57,11 @@ Class DoctorController extends Controller
 								
 					if(mysqli_num_rows($this->getQueryData()) > 0)
 					{
-						var_dump($this->getQueryData());
-						//$symptomresults = mysqli_fetch_assoc($this->getQueryData());
-						//$currentpatientindex = 'patient' . $i; 
-						//$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
-						//$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
+						//var_dump($this->getQueryData());
+						$symptomresults = mysqli_fetch_assoc($this->getQueryData());
+						$currentpatientindex = 'patient' . $i; 
+						$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
+						$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
 					}
 				}				
 			}

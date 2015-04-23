@@ -41,7 +41,8 @@ if(empty($_POST['patient_name']))
 {
 	echo "<h2><CENTER> Welcome $username.<br></h2>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
-	$patientsarray = $Doccontrollerobject->patients; 
+	var_dump($Doccontrollerobject->patients);
+	/*$patientsarray = $Doccontrollerobject->patients; 
 	echo '<table>';
 
 	for($i = 1; $i<= 5; $i++)
@@ -51,10 +52,10 @@ if(empty($_POST['patient_name']))
 		echo '</tr>';	 
 	}
 	
-	echo '</table>';
+	echo '</table>';*/
 }
 // checking patient details. 
-if (!empty($_POST['patient_name']))
+else if (!empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->listOfDetails($_POST['patient_name']);
 	
