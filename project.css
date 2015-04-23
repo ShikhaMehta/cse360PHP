@@ -4,6 +4,9 @@
 
 body {
 	background-color: lightblue;
+}
+
+body * { /* center all elements in body */
 	margin-left: auto;
 	margin-right: auto;
 }
