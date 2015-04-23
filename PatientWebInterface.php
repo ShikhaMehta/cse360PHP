@@ -132,7 +132,21 @@ else
 	require 'PatientController.php';
 	$Patcontrollerobject = new PatientController;
 	$Patcontrollerobject->submitSymptoms($_SESSION['current_user'], $_POST['Symptom1'], $_POST['Symptom2'], $_POST['Symptom3'], $_POST['Symptom4'], $_POST['Symptom5']);
-	var_dump($Patcontrollerobject->getQueryData());
+	if ($Patcontrollerobject->getQueryData())
+	{
+		$_SESSION['current_user'] = NULL;
+		$_SESSION['user_type'] = NULL;
+		?>
+		<form action="index.php" >
+			Thank you for your submission. A doctor will assist you shortly.
+			<input type=submit value="OK"/>
+		</form>
+		<?php
+	}
+	else
+	{
+		echo "The symptoms did not submit, please try again.";
+	}
 }
 
 ?> 
