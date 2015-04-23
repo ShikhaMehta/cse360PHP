@@ -4,8 +4,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1);
 
-$username = $_SESSION['current_user'];
-
 //echo "<html>";
 //			echo "<title>Patient Symptoms Page</title>";
 //			echo "<body>";
@@ -37,11 +35,10 @@ require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
 // checking patient list. 
+echo "<h2><CENTER> Welcome $_SESSION['current_user'].<br></h2>"; 
 if(empty($_POST['patient_name']))
 {
-	echo "<h2><CENTER> Welcome $username.<br></h2>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
-	//var_dump($Doccontrollerobject->getPatients());
 	$patientsarray = $Doccontrollerobject->getPatients(); 
 	echo '<table>';
 
@@ -72,20 +69,15 @@ else if (!empty($_POST['patient_name']))
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) 
 	{
-		
 		echo '<table>';
 		
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData())) 
 		 {
 			 echo '<tr>';
-	          echo '<td>' . $row['Symptom1'] . '</td><td>' . $row['Symptom2'] . '</td><td>' . $row['Symptom3'] . '</td><td>' . $row['Symptom4'] . '</td><td>' . $row['Symptom5'] . '</td>';
+	         echo '<td>' . $row['Symptom1'] . '</td><td>' . $row['Symptom2'] . '</td><td>' . $row['Symptom3'] . '</td><td>' . $row['Symptom4'] . '</td><td>' . $row['Symptom5'] . '</td>';
 			 echo '</tr>';
-	     }
-		 
+	     }	 
 		 echo '</table>';
-		 
-		 
-		 
 	}
 }
 // redirect to index. 
