@@ -84,7 +84,7 @@ Class DoctorController extends Controller
 	{
 		$meaninteger = $newintegervalue1 + $newintegervalue2 + $newintegervalue3 + $newintegervalue4 + $newintegervalue5;
 		$returninteger = $meaninteger/5; 
-		return $returninteger; 
+		return round ($returninteger); 
 	}
 	
 	//Written by Adam Nunez
