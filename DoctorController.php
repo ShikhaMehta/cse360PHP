@@ -55,7 +55,7 @@ Class DoctorController extends Controller
 				for ($i = 1; $i <= 5; $i++)
 				{
 					$currentpatient = 'Pat' . $i . 'Name'; 
-					$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "';");
+					$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "' ORDER BY TimeStamp DESC;");
 				
 					$this->queryDatabase(); // query for each patient's symptoms. 
 								
