@@ -41,48 +41,46 @@ if(empty($_POST['patient_name']))
 {
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
 	$patientsarray = $Doccontrollerobject->getPatients(); 
-	echo '<table>';
+	echo '<table><tr>';
 
 	for($i = 1; $i<= 5; $i++)
 	{	
 	?>
-		<tr>
-			<td>
-				<form action="index.php" method="post">
-					<div class="patient_icon" id="patient_<?php 
+		<td>
+			<form action="index.php" method="post">
+				<div class="patient_icon" id="patient_<?php 
+				
+					// php if elseif statement to determine which color patient
+					//  icon should be based on the severity of their symptoms
+					$severityInt = $patientsarray['patient' . $i . 'mean'];
 					
-						// php if elseif statement to determine which color patient
-						//  icon should be based on the severity of their symptoms
-						$severityInt = $patientsarray['patient' . $i . 'mean'];
-						
-						// this prints the rest of the id for the div tag
-						// so that CSS can color it correctly
-						if ($severityInt <= 3) {
-							echo 'green';
-						} else if ($severityInt <= 4 ) {
-							echo 'yellow';
-						} else if ($severityInt <= 7 ) {
-							echo 'orange';
-						} else {
-							echo 'red';
-						}
-					
-					
-						?>">
-						<div class="patient_submit_div">
-							<input class="patient_submit_button" type="submit" value="" />
-						</div>
-						<input type="hidden" name="patient_name" value="<?php echo $patientsarray['patient' . $i . 'name']; ?>" />
-						<div class="patient_name"><?php echo $patientsarray['patient' . $i . 'name']; ?></div>
-						<div class="patient_pain_number"><?php echo $patientsarray['patient' . $i . 'mean']; ?></div>
+					// this prints the rest of the id for the div tag
+					// so that CSS can color it correctly
+					if ($severityInt <= 3) {
+						echo 'green';
+					} else if ($severityInt <= 4 ) {
+						echo 'yellow';
+					} else if ($severityInt <= 7 ) {
+						echo 'orange';
+					} else {
+						echo 'red';
+					}
+				
+				
+					?>">
+					<div class="patient_submit_div">
+						<input class="patient_submit_button" type="submit" value="" />
 					</div>
-				</form>
-			</td>
-		</tr>
+					<input type="hidden" name="patient_name" value="<?php echo $patientsarray['patient' . $i . 'name']; ?>" />
+					<div class="patient_name"><?php echo $patientsarray['patient' . $i . 'name']; ?></div>
+					<div class="patient_pain_number"><?php echo $patientsarray['patient' . $i . 'mean']; ?></div>
+				</div>
+			</form>
+		</td>
 	<?php
 	}
 	
-	echo '</table>';
+	echo '</tr></table>';
 }
 
 // checking patient details. 
