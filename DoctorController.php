@@ -39,10 +39,9 @@ Class DoctorController extends Controller
 		$this->setQueryString("SELECT * FROM doctor WHERE DoctorName='$DoctorName';");
 		$this->queryDatabase();
 		
-		var_dump($this->getQueryData());
 
 		// When the query data is greater than zero. When there are results. 
-		/*if (mysqli_num_rows($this->queryData) > 0) 
+		if (mysqli_num_rows($this->queryData) > 0) 
 		{
 			// creates an associative array that saves the results.  
 			$doctorresults = mysqli_fetch_assoc ($this->queryData);
@@ -51,14 +50,12 @@ Class DoctorController extends Controller
 			for ($i = 1; $i <= 5; $i++)
 			{
 				$currentpatient = 'Pat' . $i . 'Name'; 
-				$this->setQueryString('SELECT Symptom1,Symptom2,Symptom3,Symptom4,Symptom5 FROM patient WHERE PatientName =' . $doctorresults["$currentpatient"]);
+				$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "';");
 				$this->queryDatabase(); // query for each patient's symptoms. 
 				
 				// calculating mean for each patient.
 				
-				
-				// putting comment here
-				/*if(mysqli_num_rows($this->queryData) > 0)
+				if(mysqli_num_rows($this->queryData) > 0)
 				{
 					$symptomresults = mysqli_fetch_assoc($this->queryData);
 					$currentpatientindex = 'patient' . $i; 
@@ -66,7 +63,7 @@ Class DoctorController extends Controller
 					$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
 				}
 			}
-		}*/
+		}
 	}
 	// calculates the mean number from all of the patient symptom numbers. 
 	public function calculatemean($newintegervalue1, $newintegervalue2, $newintegervalue3, $newintegervalue4, $newintegervalue5)
