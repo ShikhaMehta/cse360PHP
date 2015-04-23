@@ -41,7 +41,7 @@ if(empty($_POST['patient_name']))
 {
 	echo "<h2><CENTER> Welcome $username.<br></h2>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
-	var_dump($Doccontrollerobject->patients);
+	var_dump($Doccontrollerobject->getPatients());
 	/*$patientsarray = $Doccontrollerobject->patients; 
 	echo '<table>';
 

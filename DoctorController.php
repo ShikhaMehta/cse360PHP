@@ -32,7 +32,11 @@ Class DoctorController extends Controller
 	
 	// Written by Oluwatosin Ajayi. 
 	// used for storing the patient's symptom numbers for results of the mean.  
-	public $patients;
+	private $patients;
+	public function getPatients ( )
+	{
+		return $this->patients;
+	}
 	public function querydoctordatabases($DoctorName) 
 	{	
 		// Getting the list of the doctor's patients. 	
@@ -62,12 +66,7 @@ Class DoctorController extends Controller
 						$currentpatientindex = 'patient' . $i; 
 						$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
 						$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
-						//echo $patients[$currentpatientindex . 'name'];
-						echo $currentpatientindex . 'name';
-						echo "<br/>";
-						//echo $patients[$currentpatientindex . 'mean'];
-						echo $currentpatientindex . 'mean';
-						echo "<br/>";
+
 						
 					}
 				}				
