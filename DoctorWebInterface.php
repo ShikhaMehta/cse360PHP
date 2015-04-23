@@ -48,8 +48,8 @@ if(empty($_POST['patient_name']))
 	for($i = 1; $i<= 5; $i++)
 	{	
 		echo '<tr>';
-	    echo '<td>' . $patientsarray['patient' . $i . 'name'] . '</td> <td>' . $patientsarray['patient' . $i . 'mean'] . ' </td>';
-		echo '</tr>';	 
+		echo '<td>' . $patientsarray['patient' . $i . 'name'] . '</td> <td>' . $patientsarray['patient' . $i . 'mean'] . ' </td>';
+		echo '</tr>';
 	}
 	
 	echo '</table>';
