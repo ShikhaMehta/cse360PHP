@@ -82,6 +82,7 @@ else if (!empty($_POST['patient_name']))
 		 {
 			 echo '<tr>';
 	         echo '<td>' . $row['Symptom1'] . '</td><td>' . $row['Symptom2'] . '</td><td>' . $row['Symptom3'] . '</td><td>' . $row['Symptom4'] . '</td><td>' . $row['Symptom5'] . '</td>';
+			 echo '<td>' . $row['TimeStamp'] . ' </td>';
 			 echo '</tr>';
 	     }	 
 		 echo '</table>';
