@@ -106,7 +106,7 @@ else if (!empty($_POST['patient_name']))
 // redirect to index. 
 else
 {
-	
+	header('Location: http://engineers-withoutborders.rhcloud.com/index.php');
 }
 ?>
 
