@@ -46,29 +46,23 @@ Class DoctorController extends Controller
 			// creates an associative array that saves the results.  
 			$doctorresults = mysqli_fetch_assoc($this->queryData);
 			
-			 if ($doctorresults > 0) 
-			 {
-				//while ($row = mysqli_fetch_assoc($this->getQueryData())) 
-				//{
-				echo $doctorresults["Pat1Name"] . $doctorresults["Pat2Name"] . $doctorresults["Pat3Name"] . $doctorresults["Pat4Name"] . $doctorresults["Pat5Name"]; 	    
-				//}
-			}
-			/*for ($i = 1; $i <= 5; $i++)
+			if ($doctorresults > 0) 
 			{
-				$currentpatient = 'Pat' . $i . 'Name'; 
-				$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "';");
-				$this->queryDatabase(); // query for each patient's symptoms. 
-				
-				// calculating mean for each patient.
-				
-				if(mysqli_num_rows($this->queryData) > 0)
+				for ($i = 1; $i <= 5; $i++)
 				{
-					$symptomresults = mysqli_fetch_assoc($this->queryData);
-					$currentpatientindex = 'patient' . $i; 
-					$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
-					$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
-				}
-			}*/
+					$currentpatient = 'Pat' . $i . 'Name'; 
+					$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "';");
+					$this->queryDatabase(); // query for each patient's symptoms. 
+								
+					if(mysqli_num_rows($this->getQueryData()) > 0)
+					{
+						$symptomresults = mysqli_fetch_assoc($this->getQueryData());
+						$currentpatientindex = 'patient' . $i; 
+						$patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
+						$patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
+					}
+				}				
+			}
 		}
 	}
 	// calculates the mean number from all of the patient symptom numbers. 
