@@ -56,7 +56,7 @@ if(empty($_POST['patient_name']))
 					<div class="patient_submit_div">
 						<input class="patient_submit_button" type="submit" value="details" />
 					</div>
-					<input type="hidden" name="patient_name" value="Patient1" />
+					<input type="hidden" name="patient_name" value="<?php echo $patientsarray['patient' . $i . 'name']; ?>" />
 					<div class="patient_name"><?php echo $patientsarray['patient' . $i . 'name']; ?></div>
 					<div class="patient_pain_number"><?php echo $patientsarray['patient' . $i . 'mean']; ?></div>
 				</form>
