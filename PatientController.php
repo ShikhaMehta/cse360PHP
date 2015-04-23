@@ -29,7 +29,7 @@ Class PatientController extends Controller
 	public function submitSymptoms($patientName, $symptom1, $symptom2, $symptom3, $symptom4, $symptom5)
 	{
 		//query string
-		$this->setQueryString("INSERT INTO patient VALUES ('$patientName', '$symptom1', '$symptom2', '$symptom3', '$symptom4', '$symptom5', NOW());");
+		$this->setQueryString("INSERT INTO patient VALUES ('$patientName', '$symptom1', '$symptom2', '$symptom3', '$symptom4', '$symptom5', DATE_SUB(NOW(), INTERVAL 3 HOUR));");
 		$this->queryDatabase();
 	}
 }
