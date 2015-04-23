@@ -129,23 +129,30 @@ if (empty($_POST['Symptom1']))
 }
 else
 {
-	require 'PatientController.php';
-	$Patcontrollerobject = new PatientController;
-	$Patcontrollerobject->submitSymptoms($_SESSION['current_user'], $_POST['Symptom1'], $_POST['Symptom2'], $_POST['Symptom3'], $_POST['Symptom4'], $_POST['Symptom5']);
-	if ($Patcontrollerobject->getQueryData())
+	if ((empty($_POST['Symptom2'])) || (empty($_POST['Symptom3'])) || (empty($_POST['Symptom4'])) || (empty($_POST['Symptom5'])))
 	{
-		$_SESSION['current_user'] = NULL;
-		$_SESSION['user_type'] = NULL;
-		?>
-		<form action="index.php" >
-			Thank you for your submission. A doctor will assist you shortly.
-			<input type=submit value="OK"/>
-		</form>
-		<?php
+		echo "One of the symptoms had no value entered. Please use your browser's back button to try again.";
 	}
 	else
-	{
-		echo "The symptoms did not submit, please try again.";
+	{	
+		require 'PatientController.php';
+		$Patcontrollerobject = new PatientController;
+		$Patcontrollerobject->submitSymptoms($_SESSION['current_user'], $_POST['Symptom1'], $_POST['Symptom2'], $_POST['Symptom3'], $_POST['Symptom4'], $_POST['Symptom5']);
+		if ($Patcontrollerobject->getQueryData())
+		{
+			$_SESSION['current_user'] = NULL;
+			$_SESSION['user_type'] = NULL;
+			?>
+			<form action="index.php" >
+				Thank you for your submission. A doctor will assist you shortly.
+				<input type=submit value="OK"/>
+			</form>
+			<?php
+		}
+		else
+		{
+			echo "The symptoms did not submit, please try again.";
+		}
 	}
 }
 
