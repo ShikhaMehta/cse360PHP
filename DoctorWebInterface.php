@@ -31,10 +31,6 @@ error_reporting(-1);
 //
 //
 ------------------------------------------------*/
-if (session_status() == PHP_SESSION_NONE) 
-{
-	session_start();
-}
 
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
@@ -52,7 +48,7 @@ if(empty($_POST['patient_name']))
 	?>
 		<tr>
 			<td>
-				<form action="DoctorWebInterface.php" method="POST">
+				<form action="index.php" method="POST">
 					<div class="patient_submit_div">
 						<input class="patient_submit_button" type="submit" value="details" />
 					</div>
