@@ -24,7 +24,7 @@ table {
 }
 
 table.patient_list_table td {
-	padding: 20px;
+	width: 120px;
 }
 
 /* ---- end general table stuff ---- */
