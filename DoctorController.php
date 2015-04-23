@@ -71,6 +71,7 @@ Class DoctorController extends Controller
 					}
 					else
 					{
+						$currentpatientindex = 'patient' . $i; 
 						$this->patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
 						$this->patients[$currentpatientindex . 'mean'] = 0;
 					}
