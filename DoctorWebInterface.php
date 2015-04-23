@@ -31,6 +31,11 @@ error_reporting(-1);
 //
 //
 ------------------------------------------------*/
+if (session_status() == PHP_SESSION_NONE) 
+{
+	session_start();
+}
+
 require 'DoctorController.php';
 $Doccontrollerobject = new DoctorController;
 
