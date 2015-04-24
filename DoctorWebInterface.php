@@ -37,13 +37,13 @@ $Doccontrollerobject = new DoctorController;
 
 // checking patient list. 
 echo "<h2><CENTER> Welcome " . $_SESSION['current_user'] . " <br></h2>"; 
-if(empty($_POST['patient_name']))
+if(empty($_POST['patient_name']))//checking to see if the doctor has not clicked icon / if doc wants to see patients details then array will be populated
 {
-	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);
-	$patientsarray = $Doccontrollerobject->getPatients(); 
+	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);//runs query on doctor to get back list of patients and calculates mean of patients most recent symptoms
+	$patientsarray = $Doccontrollerobject->getPatients(); //gets array from controller class
 	echo '<table><tr>';
 
-	for($i = 1; $i<= 5; $i++)
+	for($i = 1; $i<= 5; $i++) //outputs the patient name and mean score in a formatted way
 	{	
 	?>
 		<td>
@@ -65,16 +65,16 @@ if(empty($_POST['patient_name']))
 }
 
 // checking patient details. 
-else if (!empty($_POST['patient_name']))
+else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked on a patient icon to see the patients details
 {
 	echo $_POST['patient_name']; 
-	$Doccontrollerobject->listOfDetails($_POST['patient_name']);
+	$Doccontrollerobject->listOfDetails($_POST['patient_name']); //queries the database to get all symptom entries from patient
 	
-	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) 
+	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) //if there is more then 0 symptom entries
 	{
 		echo '<table>';
 		
-	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData())) 
+	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData()))  //loops through each symptom entry and outputs it
 		 {
 			 echo '<tr>';
 	         echo '<td id="' . determineCSSColor($row['Symptom1']) . '">' . $row['Symptom1'] . '</td>';
@@ -88,7 +88,7 @@ else if (!empty($_POST['patient_name']))
 		 echo '</table>';
 	}
 }
-// redirect to index. 
+// redirect to index. (log in page)
 else
 {
 	header('Location: http://engineers-withoutborders.rhcloud.com/index.php');
