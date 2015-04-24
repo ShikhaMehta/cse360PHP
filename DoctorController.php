@@ -33,7 +33,7 @@ Class DoctorController extends Controller
 	// Written by Oluwatosin Ajayi. 
 	// used for storing the patient's symptom numbers for results of the mean.  
 	private $patients;
-	public function getPatients ( )
+	public function getPatients( )
 	{
 		return $this->patients;
 	}
@@ -45,6 +45,7 @@ Class DoctorController extends Controller
 		
 
 		// When the query data is greater than zero. When there are results. 
+		
 		if (mysqli_num_rows($this->getQueryData()) > 0) 
 		{
 			// creates an associative array that saves the results.  
@@ -58,7 +59,8 @@ Class DoctorController extends Controller
 					$this->setQueryString("SELECT * FROM patient WHERE PatientName='" . $doctorresults["$currentpatient"] . "' ORDER BY TimeStamp DESC;");
 				
 					$this->queryDatabase(); // query for each patient's symptoms. 
-								
+					
+					// if the patient has symptoms			
 					if(mysqli_num_rows($this->getQueryData()) > 0)
 					{
 						//var_dump($this->getQueryData());
@@ -67,8 +69,9 @@ Class DoctorController extends Controller
 						$this->patients[$currentpatientindex . 'name'] = $doctorresults["$currentpatient"];
 						$this->patients[$currentpatientindex . 'mean'] = $this->calculatemean($symptomresults['Symptom1'],$symptomresults['Symptom2'],$symptomresults['Symptom3'],$symptomresults['Symptom4'],$symptomresults['Symptom5']);	
 
-						
 					}
+					// there are no symptoms. 
+					// Puts in an empty entry in the patient's array that we are building. 
 					else
 					{
 						$currentpatientindex = 'patient' . $i; 
