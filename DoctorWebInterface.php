@@ -67,12 +67,13 @@ if(empty($_POST['patient_name']))//checking to see if the doctor has not clicked
 // checking patient details. 
 else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked on a patient icon to see the patients details
 {
-	echo $_POST['patient_name']; 
+	 
 	$Doccontrollerobject->listOfDetails($_POST['patient_name']); //queries the database to get all symptom entries from patient
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) //if there is more then 0 symptom entries
 	{
-		echo '<table><tr><td>Date & Time</td><td>Pain</td><td>Drowsiness</td><td>Nausea</td><td>Anxiety</td><td>Depression</td></tr>';
+		echo '<table><tr><td colspan=2>' . $_POST['patient_name'] . '</td></tr>';
+		echo '<tr><td>Date & Time</td><td>Pain</td><td>Drowsiness</td><td>Nausea</td><td>Anxiety</td><td>Depression</td></tr>';
 		
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData()))  //loops through each symptom entry and outputs it
 		 {
