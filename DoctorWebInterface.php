@@ -72,17 +72,17 @@ else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked 
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) //if there is more then 0 symptom entries
 	{
-		echo '<table>';
+		echo '<table><tr><td>Date & Time</td><td>Pain</td><td>Drowsiness</td><td>Nausea</td><td>Anxiety</td><td>Depression</td></tr>';
 		
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData()))  //loops through each symptom entry and outputs it
 		 {
 			 echo '<tr>';
+			 echo '<td>' . $row['TimeStamp'] . ' </td>';
 	         echo '<td id="' . determineCSSColor($row['Symptom1']) . '">' . $row['Symptom1'] . '</td>';
 	         echo '<td id="' . determineCSSColor($row['Symptom2']) . '">' . $row['Symptom2'] . '</td>';
 	         echo '<td id="' . determineCSSColor($row['Symptom3']) . '">' . $row['Symptom3'] . '</td>';
 	         echo '<td id="' . determineCSSColor($row['Symptom4']) . '">' . $row['Symptom4'] . '</td>';
 	         echo '<td id="' . determineCSSColor($row['Symptom5']) . '">' . $row['Symptom5'] . '</td>';
-			 echo '<td>' . $row['TimeStamp'] . ' </td>';
 			 echo '</tr>';
 	     }	 
 		 echo '</table>';
