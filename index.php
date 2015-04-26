@@ -86,9 +86,7 @@ if (! empty($_POST['logout'])) {
 			</form>
 		</div>
 		<?php
-			} else {
-				echo 'Click login to log into EWB';
-			}
+		} // close of if statement for when the user is logged in.
 		?>
 	</div>
 	<?php
