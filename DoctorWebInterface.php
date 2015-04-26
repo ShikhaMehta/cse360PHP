@@ -73,7 +73,7 @@ else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked 
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) //if there is more then 0 symptom entries
 	{
-		echo '<table class="patient_details"><tr><th colspan=2>' . $_POST['patient_name'] . '</th></tr>';
+		echo '<br><br><table class="patient_details"><tr><th colspan=6>' . $_POST['patient_name'] . '\'s Symptom Entries</th></tr>';
 		echo '<tr><th>Date & Time</th><th>Pain</th><th>Drowsiness</th><th>Nausea</th><th>Anxiety</th><th>Depression</th></tr>';
 		
 	     while ($row = mysqli_fetch_assoc($Doccontrollerobject->getQueryData()))  //loops through each symptom entry and outputs it
