@@ -29,6 +29,33 @@ table.patient_list_table td {
 
 /* ---- END general table stuff ---- */
 
+/* ---- stuff for top menu ---- */
+div.top_menu {
+	width: 90%;
+	position: relative;
+	margin-top: 0px;
+}
+
+div.welcome_user {
+	position: relative;
+	margin-right: 30px;
+}
+
+div.logout_div {
+	position: relative;
+	margin-right: 30px;
+}
+
+input.logout_button {
+	width: 200px;
+	height: 20px;
+	border: none;
+	color: orange;
+	font-weight: bold;
+}
+
+/* ---- end stuff for top menu ---- */
+
 /* ---- styles for color coding patient information ---- */
 
 #patient_green {
