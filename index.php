@@ -55,6 +55,15 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1);
 
+
+// if the user clicked the logout button,
+//   log them out and refresh the page
+if (! empty($_POST['logout'])) {
+	$_SESSION['current_user'] = NULL;
+	$_SESSION['user_type'] = NULL;
+	header('Location: http://engineers-withoutborders.rhcloud.com/index.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,18 +74,35 @@ error_reporting(-1);
 	<link rel="stylesheet" href="project.css" />
 </head>
 <body>
+	<div class="top_menu">
+		<?php
+		if (! empty($_SESSION['current_user'])) {
+		?>		
+		<div class="welcome_user">
+			Welcome: <?php echo " " . $_SESSION['current_user']; ?>
+		</div>
+		<div class="logout_div">
+			<form action="index.php" method="post">
+				<input type="hidden" name="logout" value="1" />
+				<input class="logout_buttom" type="submit" value="logout" />
+			</form>
+		</div>
+		<?php
+			} else {
+				echo 'Click login to log into EWB';
+			}
+		?>
+	</div>
 	<?php
 		// based on whether or not the user has logged in
 		//  and what type of user it is, do the appropriate
 		//  action (show appropriate html page)
-
+		
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
 			//------Shikha's Code - to get to LoginWebInterface----------
 			echo "<form action=\"LoginWebInterface.php\" method=\"post\">";
-			echo " Go to Login Page";
-			echo "<br><br>";
-			echo "<input type=\"submit\"></CENTER>";
+			echo "<input type=\"submit\" value=\"Login\"></CENTER>";
 			echo "</form>";
 			//--------------------End Shikha's Code ----------------------
 			//include 'LoginWebInterface.php';
