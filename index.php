@@ -84,7 +84,7 @@ if (! empty($_POST['logout'])) {
 		<div class="logout_div">
 			<form action="index.php" method="post">
 				<input type="hidden" name="logout" value="1" />
-				<input class="logout_buttom" type="submit" value="logout" />
+				<input class="logout_button" type="submit" value="logout" />
 			</form>
 		</div>
 		<?php
