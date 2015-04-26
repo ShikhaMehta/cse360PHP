@@ -42,7 +42,7 @@ if(empty($_POST['patient_name']))//checking to see if the doctor has not clicked
 	echo "<CENTER><h3>Your patients are listed below.</h3>Click a patient to view the details of their entries.<br>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);//runs query on doctor to get back list of patients and calculates mean of patients most recent symptoms
 	$patientsarray = $Doccontrollerobject->getPatients(); //gets array from controller class
-	echo '<table><tr>';
+	echo '<br><br><table><tr>';
 
 	for($i = 1; $i<= 5; $i++) //outputs the patient name and mean score in a formatted way
 	{	
