@@ -22,7 +22,9 @@
 //
 //
 ------------------------------------------------*/
+// required to use objects within controller.php
 require 'Controller.php';
+
 Class DoctorController extends Controller
 {
 	function __construct() 
