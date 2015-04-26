@@ -80,8 +80,6 @@ if (! empty($_POST['logout'])) {
 		?>		
 		<div class="welcome_user">
 			Welcome: <?php echo " " . $_SESSION['current_user']; ?>
-		</div>
-		<div class="logout_div">
 			<form action="index.php" method="post">
 				<input type="hidden" name="logout" value="1" />
 				<input class="logout_button" type="submit" value="logout" />
@@ -102,6 +100,7 @@ if (! empty($_POST['logout'])) {
 			// if there is not yet a user, call the login script
 			//------Shikha's Code - to get to LoginWebInterface----------
 			echo "<form action=\"LoginWebInterface.php\" method=\"post\">";
+			echo "Welcome! Please login to begin.<br>";
 			echo "<input type=\"submit\" value=\"Login\"></CENTER>";
 			echo "</form>";
 			//--------------------End Shikha's Code ----------------------
