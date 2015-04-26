@@ -39,7 +39,7 @@ $Doccontrollerobject = new DoctorController;
 
 if(empty($_POST['patient_name']))//checking to see if the doctor has not clicked icon / if doc wants to see patients details then array will be populated
 {
-	echo "<h3><CENTER>Your patients are listed below.</h3>Click a patient to view the details of their entries.<br>"; 
+	echo "<CENTER><h3>Your patients are listed below.</h3>Click a patient to view the details of their entries.<br>"; 
 	$Doccontrollerobject->querydoctordatabases($_SESSION['current_user']);//runs query on doctor to get back list of patients and calculates mean of patients most recent symptoms
 	$patientsarray = $Doccontrollerobject->getPatients(); //gets array from controller class
 	echo '<table><tr>';
@@ -62,13 +62,13 @@ if(empty($_POST['patient_name']))//checking to see if the doctor has not clicked
 	<?php
 	}
 	
-	echo '</tr></table>';
+	echo '</tr></table></CENTER>';
 }
 
 // checking patient details. 
 else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked on a patient icon to see the patients details
 {
-	echo "<h3><CENTER>The symptom entries for the requested patient are listed below.</h3>Use the browser's back button to return to the overview of all your patients.<br>";  
+	echo "<CENTER><h3>The symptom entries for the requested patient are listed below.</h3>Use the browser's back button to return to the overview of all your patients.<br>";  
 	$Doccontrollerobject->listOfDetails($_POST['patient_name']); //queries the database to get all symptom entries from patient
 	
 	if (mysqli_num_rows($Doccontrollerobject->getQueryData()) > 0) //if there is more then 0 symptom entries
@@ -87,7 +87,7 @@ else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked 
 	         echo '<td id="' . determineCSSColor($row['Symptom5']) . '">' . $row['Symptom5'] . '</td>';
 			 echo '</tr>';
 	     }	 
-		 echo '</table>';
+		 echo '</table></CENTER>';
 	}
 }
 // redirect to index. (log in page)
