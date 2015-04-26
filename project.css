@@ -41,15 +41,11 @@ div.welcome_user {
 	margin-right: 30px;
 }
 
-div.logout_div {
-	position: relative;
-	margin-right: 30px;
-}
-
 input.logout_button {
 	width: 200px;
 	height: 20px;
 	border: none;
+	background-color: darkslategray;
 	color: orange;
 	font-weight: bold;
 }
