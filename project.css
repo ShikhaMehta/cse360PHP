@@ -50,7 +50,7 @@ input.logout_button {
 	font-weight: bold;
 }
 
-/* ---- end stuff for top menu ---- */
+/* ---- END stuff for top menu ---- */
 
 /* ---- styles for color coding patient information ---- */
 
@@ -109,3 +109,13 @@ div.patient_submit_div {
 }
 
 /* ---- END stuff to make patient list icons work like buttons ---- */
+
+/* ---- stuff for patient details table ---- */
+table.patient_list th {
+	font-weight: bold;
+}
+
+table.patient_list td {
+	text-align: center;
+}
+/* ---- END stuff for patient details table ---- */
