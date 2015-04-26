@@ -99,10 +99,10 @@ if (! empty($_POST['logout'])) {
 		if (empty($_SESSION['user_type'])) {
 			// if there is not yet a user, call the login script
 			//------Shikha's Code - to get to LoginWebInterface----------
-			echo "<form action=\"LoginWebInterface.php\" method=\"post\">";
-			echo "Welcome! Please login to begin.<br>";
-			echo "<input type=\"submit\" value=\"Login\"></CENTER>";
-			echo "</form>";
+			echo "<CENTER><form action=\"LoginWebInterface.php\" method=\"post\">";
+			echo "<br><br>Welcome! Please login to begin.<br>";
+			echo "<input type=\"submit\" value=\"Login\">";
+			echo "</form></CENTER>";
 			//--------------------End Shikha's Code ----------------------
 			//include 'LoginWebInterface.php';
 		} else {
