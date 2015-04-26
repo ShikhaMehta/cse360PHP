@@ -88,6 +88,8 @@ else if (!empty($_POST['patient_name'])) //checks to see if the doc has clicked 
 			 echo '</tr>';
 	     }	 
 		 echo '</table></CENTER>';
+	} else {
+		echo '<br><br>' . $_POST['patient_name'] . ' has not made any entries.</CENTER>';
 	}
 }
 // redirect to index. (log in page)
